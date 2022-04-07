@@ -10,11 +10,11 @@ function initialize() {
         console.debug(`Page loaded in edit mode for task with ID: ${taskId}`);
         getTaskById(taskId)
             .then(response => response.json())
-            .then(task => {
-                setValueById("title", task.title);
-                setValueById("notes", task.notes);
-                setValueById("due", task.due);
-                setValueById("responsible", task.responsible);
+            .then(response => {
+                setValueById("title", response.result.title);
+                setValueById("notes", response.result.notes);
+                setValueById("due", response.result.due);
+                setValueById("responsible", response.result.responsible);
 
                 setTextContentById("page-title", "Aufgabe bearbeiten");
                 setTextContentById("save-btn", "Speichern");
@@ -78,11 +78,21 @@ function setAttributeById(id, attributeName, attributeValue) {
  * @returns {any|undefined} The task, if it was found.
  */
 function getTaskById(id) {
-    return fetch(`https://dhbw-web-todo.azurewebsites.net/api/tasks/${id}`, {
+    return fetch(`https://dhbw-web-todo.azurewebsites.net/api/jsonrpc`, {
+        method: 'post',
         headers: {
-            'Accept': 'application/json',
-            'X-Api-key': 'ahirsch'
-        }
+            'Content-Type': 'application/json-rpc',
+            'Accept': 'application/json-rpc'
+        },
+        body: JSON.stringify({
+            "jsonrpc": "2.0",
+            "method": "getTaskById",
+            "params": {
+                "owner": "ahirsch",
+                "id": id
+            },
+            "id": 0
+        })
     });
 }
 
@@ -105,38 +115,52 @@ function save(id) {
 function createNewTask(task) {
     console.debug("Trying to create new task");
 
-    fetch(`https://dhbw-web-todo.azurewebsites.net/api/tasks`, {
+    fetch(`https://dhbw-web-todo.azurewebsites.net/api/jsonrpc`, {
         method: 'post',
         headers: {
-            'Accept': 'application/json',
-            'X-Api-key': 'ahirsch'
+            'Content-Type': 'application/json-rpc',
+            'Accept': 'application/json-rpc'
         },
-        body: JSON.stringify(task)
-    })
-        .then(response => {
-                console.info(`Creating new task finished with status: ${response.status}`)
-                location.href = "liste.html";
-            }
-        )
+        body: JSON.stringify({
+            "jsonrpc": "2.0",
+            "method": "addTask",
+            "params": {
+                "owner": "ahirsch",
+                "task": task
+            },
+            "id": 0
+        })
+    }).then(response => {
+            console.info(`Creating new task finished with status: ${response.status}`)
+            location.href = "liste.html";
+        }
+    )
         .catch(error => console.error(`Creating new task failed: ${error}`));
 }
 
 function updateExistingTask(task) {
     console.debug("Trying to create new task");
 
-    fetch(`https://dhbw-web-todo.azurewebsites.net/api/tasks/${task.id}`, {
-        method: 'put',
+    fetch(`https://dhbw-web-todo.azurewebsites.net/api/jsonrpc`, {
+        method: 'post',
         headers: {
-            'Accept': 'application/json',
-            'X-Api-key': 'ahirsch'
+            'Content-Type': 'application/json-rpc',
+            'Accept': 'application/json-rpc'
         },
-        body: JSON.stringify(task)
-    })
-        .then(response => {
-                console.info(`Updating existing task finished with status: ${response.status}`)
-                location.href = "liste.html";
-            }
-        )
+        body: JSON.stringify({
+            "jsonrpc": "2.0",
+            "method": "updateTaskById",
+            "params": {
+                "owner": "ahirsch",
+                "task": task
+            },
+            "id": 0
+        })
+    }).then(response => {
+            console.info(`Updating existing task finished with status: ${response.status}`)
+            location.href = "liste.html";
+        }
+    )
         .catch(error => console.error(`Updating existing task failed: ${error}`));
 }
 

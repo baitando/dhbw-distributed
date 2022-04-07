@@ -68,32 +68,28 @@ function appendById(id, elementToAppend) {
 function deleteTask(id) {
     console.debug(`Attempting to delete task with ID: ${id}`);
 
-    fetch(`https://dhbw-web-todo.azurewebsites.net/api/tasks/${id}`, {
-        method: 'delete',
+    return fetch(`https://dhbw-web-todo.azurewebsites.net/api/jsonrpc`, {
+        method: 'post',
         headers: {
-            'X-Api-key': 'ahirsch'
-        }
+            'Content-Type': 'application/json-rpc',
+            'Accept': 'application/json-rpc'
+        },
+        body: JSON.stringify({
+            "jsonrpc": "2.0",
+            "method": "deleteTaskById",
+            "params": {
+                "owner": "ahirsch",
+                "id": id
+            },
+            "id": 0
+        })
     })
         .then(response => {
                 console.info(`Deleting task finished with status: ${response.status}`)
                 location.href = "liste.html";
             }
         )
-        .catch(error => console.error(`Creating new task failed: ${error}`));
-}
-
-/**
- * Remove all tasks from the task list.
- */
-function cleanTaskList() {
-
-    var taskList = document.getElementById("tasks");
-    if (taskList) {
-        taskList.innerHTML = "";
-        console.debug("Cleared task list");
-    } else {
-        console.error("Task list not found");
-    }
+        .catch(error => console.error(`Creating new task failed: ${error}`));;
 }
 
 /**
