@@ -21,6 +21,8 @@ var data = {
 
 http
     .createServer(function (req, res) {
+        console.log("Serving request");
+
         res.setHeader("Access-Control-Allow-Origin", "*");
         res.setHeader("Access-Control-Allow-Headers", "*");
 
@@ -38,3 +40,4 @@ http
         }
     })
     .listen(8080);
+console.log("Serving up and running");
