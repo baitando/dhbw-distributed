@@ -1,0 +1,63 @@
+<definitions name="Todo"
+             targetNamespace="http://localhost:8000/todo.wsdl"
+             xmlns:tns="http://localhost:8000/todo.wsdl"
+             xmlns:xsd1="http://localhost:8000/todo.xsd"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+    <types>
+        <schema targetNamespace="http://localhost:8000/todo.xsd"
+                xmlns="http://www.w3.org/2001/XMLSchema">
+            <element name="TodoRequest">
+                <complexType>
+                    <all>
+                        <element name="owner" type="string"/>
+                    </all>
+                </complexType>
+            </element>
+            <element name="Todo">
+                <complexType>
+                    <all>
+                        <element name="title" type="float"/>
+                    </all>
+                </complexType>
+            </element>
+        </schema>
+    </types>
+
+    <message name="GetTodoInput">
+        <part name="body" element="xsd1:TodoRequest"/>
+    </message>
+
+    <message name="GetTodoOutput">
+        <part name="body" element="xsd1:Todo"/>
+    </message>
+
+    <portType name="TodoPortType">
+        <operation name="GetTodo">
+            <input message="tns:GetTodoInput"/>
+            <output message="tns:GetTodoOutput"/>
+        </operation>
+    </portType>
+
+    <binding name="TodoSoapBinding" type="tns:TodoPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="GetTodo">
+            <soap:operation soapAction="http://localhost:8000/GetTodo"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <service name="TodoService">
+        <documentation>My first service</documentation>
+        <port name="TodoPort" binding="tns:TodoSoapBinding">
+            <soap:address location="http://localhost:8000/soap"/>
+        </port>
+    </service>
+
+</definitions>
