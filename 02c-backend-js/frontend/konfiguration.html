@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>TODO</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body onload="initialize()">
+<header class="fixed-width">
+    <a href="index.html">
+        <img src="img/todo.png">
+    </a>
+    <nav>
+        <a href="liste.html">App</a>
+        <a href="preise.html">Preise</a>
+        <a href="konfiguration.html">Konfiguration</a>
+    </nav>
+</header>
+<main class="fixed-width">
+    <div class="headline">
+        <h1 id="page-title">Konfiguration</h1>
+    </div>
+
+    <form action="#">
+        <div class="config-grp-baseurl">
+            <label for="baseurl">Backend*</label>
+            <p>Tragen Sie hier die Basis-URL des Backend-Service ein.</p>
+            <input id="baseurl" type="text">
+        </div>
+    </form>
+
+    <div class="config-grp-actions">
+        <a href="index.html"><button class="disabled-button">Abbrechen</button></a>
+        <button onclick="reset()" id="reset-btn">Zur&uuml;cksetzen</button>
+        <button onclick="save()" id="save-btn">Speichern</button>
+    </div>
+</main>
+
+<footer>
+    <div class="fixed-width footer-area">
+        <div class="footer-element">
+            <img src="img/dhbw.png"/>
+        </div>
+        <div class="footer-element copyright">
+            <p>&copy; 2021 Web-Programmierung</p>
+        </div>
+        <div class="footer-element footer-nav">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+        </div>
+    </div>
+</footer>
+<script src="js/common.js"></script>
+<script src="js/konfiguration.js"></script>
+</body>
+</html>
