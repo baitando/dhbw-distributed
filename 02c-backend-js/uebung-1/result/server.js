@@ -62,4 +62,4 @@ http
         }
     })
     .listen(8080);
-console.log("Serving up and running");
+console.log("Server up and running");
