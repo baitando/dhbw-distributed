@@ -1,5 +1,6 @@
 const http = require('http');
 const url = require('url');
+const fs = require('fs');
 
 /*
 TODO #1 Daten fuer die Rueckgabe definieren
@@ -11,7 +12,7 @@ TODO #1 Daten fuer die Rueckgabe definieren
     a) Definieren Sie ein Array.
     b) Fuegen Sie in diesem Array mehrere Tasks-Eintraege ein. Jeder Task-Eintrag ist ein eigenes Objekt.
  */
-const data = {
+const responseData = {
     items: [
         {
             id: "task-1",
@@ -53,12 +54,11 @@ http
            /gibtsnicht auf. Sehen Sie sich den Aufruf und die Antwort auch in den Entwicklerwerkzeugen Ihres Browsers
            an.
          */
-        const parsedUrl = url.parse(req.url);
-        console.log(parsedUrl);
+        const parsedUrl = url.parse(req.url, true);
         if (parsedUrl.path === "/tasks" && req.method === "GET") {
             res.setHeader("Content-Type", "application/json");
             res.writeHead(200);
-            res.write(JSON.stringify(data));
+            res.write(JSON.stringify(loadDataFromFile()));
             res.end();
         } else {
             res.writeHead(404);
@@ -67,3 +67,30 @@ http
     })
     .listen(8080);
 console.log("Server up and running");
+
+/*
+   TODO #3 Neue Funktion 'loadDateFromFile', die Daten aus einer Datei einliest
+
+   a) Erstellen Sie das Grundgeruest einer neuen Funktion mit Namen 'loadDataFromFile'. Die Funktion erwartet keinen
+      Parameter.
+   b) In der Funktion pruefen Sie, ob die Datei 'data.json' existiert.
+   c) Falls die Datei existiert, lesen Sie ihren Inhalt ein und parsen den Inhalt als JSON. Das Ergebnis geben Sie an
+      den Aufrufer zurueck.
+   d) Falls die Datei nicht existiert, geben sie eine Meldung auf der Konsole aus und liefern den Wert von 'responseData'
+      an den Aufrufer zurueck.
+   e) Ersetzen Sie nun oben die Stelle, an der 'responseData' direkt zurueck gegeben wird durch einen Aufruf der
+      Funktion 'loadDataFromFile'. Testen Sie anschliessend, ob der Aufruf ueber den Browser noch funktioniert und
+      verifizieren Sie, dass eine Konsolenausgabe ueber die fehlende Datei angezeigt wird.
+   f) Erzeugen Sie nun die Datei 'data.json' und fuegen Sie dort passende Daten im JSON-Format ein, die sich von den
+      Daten in 'responseData' unterscheiden. Verifizieren Sie nun im Browser, dass die Daten aus der Datei angezeigt
+      werden. Ein vorheriger Neustart ist nicht noetig.
+ */
+function loadDataFromFile() {
+    if(fs.existsSync('data.json')) {
+        const fileContent = fs.readFileSync('data.json');
+        return JSON.parse(fileContent.toString());
+    } else {
+        console.log('Data file does not exist');
+        return responseData;
+    }
+}

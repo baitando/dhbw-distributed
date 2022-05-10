@@ -1,10 +1,12 @@
 const http = require("http");
+const url = require('url');
+const fs = require('fs');
 
 /*
 TODO #1 Daten fuer die Rueckgabe definieren
 
 Definieren Sie hier statische Beispieldaten, die spaeter bei der Abfrage der Liste aller Eintraege als Ergebnis
-geliefert wird. Als Inspiration koennen Sie die Swagger UI der vorhandenen REST API aufrufen und darueber einen
+geliefert werden. Als Inspiration koennen Sie die Swagger UI der vorhandenen REST API aufrufen, darueber einen
 Aufruf durchfuehren und sich das Ergebnis ansehen. Sie finden Sie unter der folgenden URL:
 https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-web/master/02d_apis/uebung-1/initial/todo.yaml
 a) Definieren Sie das Array 'items'.
@@ -39,5 +41,23 @@ http
          */
 
     })
-    .listen(8080); //the server object listens on port 8080
+    .listen(8080);
 console.log("Server up and running");
+
+/*
+   TODO #3 Neue Funktion 'loadDateFromFile', die Daten aus einer Datei einliest
+
+   a) Erstellen Sie das Grundgeruest einer neuen Funktion mit Namen 'loadDataFromFile'. Die Funktion erwartet keinen
+      Parameter.
+   b) In der Funktion pruefen Sie, ob die Datei 'data.json' existiert.
+   c) Falls die Datei existiert, lesen Sie ihren Inhalt ein und parsen den Inhalt als JSON. Das Ergebnis geben Sie an
+      den Aufrufer zurueck.
+   d) Falls die Datei nicht existiert, geben sie eine Meldung auf der Konsole aus und liefern den Wert von 'responseData'
+      an den Aufrufer zurueck.
+   e) Ersetzen Sie nun oben die Stelle, an der 'responseData' direkt zurueck gegeben wird durch einen Aufruf der
+      Funktion 'loadDataFromFile'. Testen Sie anschliessend, ob der Aufruf ueber den Browser noch funktioniert und
+      verifizieren Sie, dass eine Konsolenausgabe ueber die fehlende Datei angezeigt wird.
+   f) Erzeugen Sie nun die Datei 'data.json' und fuegen Sie dort passende Daten im JSON-Format ein, die sich von den
+      Daten in 'responseData' unterscheiden. Verifizieren Sie nun im Browser, dass die Daten aus der Datei angezeigt
+      werden. Ein vorheriger Neustart ist nicht noetig.
+ */

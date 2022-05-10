@@ -1,0 +1,11 @@
+{
+  "items": [
+    {
+      "id": "task-1",
+      "title": "Aufgabe aus Datei",
+      "notes": "Das ist die erste Aufgabe",
+      "due": "2022-04-30",
+      "responsible": "Max Mustermann"
+    }
+  ]
+}
