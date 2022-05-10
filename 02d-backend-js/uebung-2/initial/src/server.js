@@ -12,42 +12,17 @@ app.use((err, req, res, next) => {
     res.send();
 });
 
-app.get('/tasks', (req, res) => {
-    res.status(200);
-    res.contentType('application/json');
-    res.json(getAllTasks());
-});
+/*
+  TODO #1 Implementierung fuer HTTP-Methode GET und Pfad /tasks mit Rueckgabe aller Eintraege
+ */
 
-app.get('/tasks/:taskId', (req, res) => {
-    const taskId = req.params['taskId'];
-    console.log(`Get task for ID '${taskId}'`)
+/*
+  TODO #2 Implementierung fuer HTTP-Methode GET und Pfad /tasks/<task-id> mit Rueckgabe eines spezifischen Eintrags
+ */
 
-    const task = getTaskById(taskId);
-    if (task) {
-        res.status(200);
-        res.json(task);
-    } else {
-        res.status(404);
-        res.send();
-    }
-});
-
-app.post('/tasks', (req, res) => {
-    console.log(`Create task`)
-    const task = req.body;
-    console.log(task);
-    if (validateTask(task)) {
-        task.id = crypto.randomUUID();
-        createTask(task);
-
-        res.status(201);
-        res.contentType('application/json');
-        res.send();
-    } else {
-        res.status(400);
-        res.send();
-    }
-});
+/*
+  TODO #3 Implementierung fuer HTTP-Methode POST und Pfad /tasks zur Anlage eines neuen Eintrags
+ */
 
 app.listen(8080, () => {
     console.log("Serving request");
