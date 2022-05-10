@@ -1,4 +1,5 @@
-const http = require("http");
+const http = require('http');
+const url = require('url');
 
 /*
 TODO #1 Daten fuer die Rueckgabe definieren
@@ -38,7 +39,8 @@ http
 
         a) Erstellen Sie eine Bedinungspruefung mit if und else. Pruefen Sie im if, ob der Pfad '/tasks' mit der HTTP-
            Methode 'GET' aufgerufen wurde. Die tatsaechlichen Werte des konkreten Aufrufs koennen Sie ueber die
-           Attribute des Parameters req ermitteln.
+           Attribute 'url' und 'method' des Parameters req ermitteln. Um den Pfad aus der URL zu extrahieren, koennen
+           Sie das url-Modul nutzen.
         b) Falls die Bedingung zutrifft (d.h. im if-Teil) setzen Sie ueber die Methoden des Parameters res die Antwort.
            Setzen Sie den Header 'Content-Type' auf den Wert 'application/json', den HTTP-Status auf 200 und schreiben
            Sie die JSON-Repraesentation des Wertes von responseData in den HTTP-Body.
@@ -51,7 +53,9 @@ http
            /gibtsnicht auf. Sehen Sie sich den Aufruf und die Antwort auch in den Entwicklerwerkzeugen Ihres Browsers
            an.
          */
-        if (req.url === "/tasks" && req.method === "GET") {
+        const parsedUrl = url.parse(req.url);
+        console.log(parsedUrl);
+        if (parsedUrl.path === "/tasks" && req.method === "GET") {
             res.setHeader("Content-Type", "application/json");
             res.writeHead(200);
             res.write(JSON.stringify(data));

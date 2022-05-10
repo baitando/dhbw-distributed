@@ -7,7 +7,7 @@ Definieren Sie hier statische Beispieldaten, die spaeter bei der Abfrage der Lis
 geliefert wird. Als Inspiration koennen Sie die Swagger UI der vorhandenen REST API aufrufen und darueber einen
 Aufruf durchfuehren und sich das Ergebnis ansehen. Sie finden Sie unter der folgenden URL:
 https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-web/master/02d_apis/uebung-1/initial/todo.yaml
-a) Definieren Sie ein Array.
+a) Definieren Sie das Array 'items'.
 b) Fuegen Sie in diesem Array mehrere Tasks-Eintraege ein. Jeder Task-Eintrag ist ein eigenes Objekt.
  */
 const responseData = {
@@ -23,7 +23,8 @@ http
 
         a) Erstellen Sie eine Bedinungspruefung mit if und else. Pruefen Sie im if, ob der Pfad '/tasks' mit der HTTP-
            Methode 'GET' aufgerufen wurde. Die tatsaechlichen Werte des konkreten Aufrufs koennen Sie ueber die
-           Attribute des Parameters req ermitteln.
+           Attribute 'url' und 'method' des Parameters req ermitteln. Um den Pfad aus der URL zu extrahieren, koennen
+           Sie das url-Modul nutzen.
         b) Falls die Bedingung zutrifft (d.h. im if-Teil) setzen Sie ueber die Methoden des Parameters res die Antwort.
            Setzen Sie den Header 'Content-Type' auf den Wert 'application/json', den HTTP-Status auf 200 und schreiben
            Sie die JSON-Repraesentation des Wertes von responseData in den HTTP-Body.
