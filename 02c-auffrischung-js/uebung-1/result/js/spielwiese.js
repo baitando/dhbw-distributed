@@ -46,7 +46,7 @@ function run() {
 
       Erstellen Sie ein Objekt 'calcObject' als Konstante.
       a) Fuegen Sie ein Attribut 'value1' mit einer Ganzzahl hinzu.
-      b) Fuegen Sie ein Attribut 'value2' mit einer Fliesskommazahl hinzu.
+      b) Fuegen Sie ein Attribut 'value2' mit einer Ganzzahl hinzu.
       c) Fuegen Sie ein Attribut 'sum' mit dem Ergebnis der Funktion 'calcSum' hinzu, die Sie mit den selben Werten wie
          'value1' und 'value2' aufrufen.
       d) Geben Sie nun das Objekt (und nur das Objekt ohne weiteren Text in dieser Ausgabe) auf der Konsole aus.
