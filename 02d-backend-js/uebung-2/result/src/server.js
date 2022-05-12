@@ -19,7 +19,6 @@ app.get('/tasks', (req, res) => {
     res.status(200);
     res.contentType('application/json');
     res.json(getAllTasks());
-    res.send();
 });
 
 /*
