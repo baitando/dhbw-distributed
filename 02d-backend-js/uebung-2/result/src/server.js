@@ -15,6 +15,7 @@ const crypto = require("crypto");
 const app = express();
 
 app.get('/tasks', (req, res) => {
+    headers(req, res);
     res.status(200);
     res.contentType('application/json');
     res.json(getAllTasks());
@@ -37,6 +38,7 @@ app.get('/tasks/:taskId', (req, res) => {
     console.log(`Get task for ID '${taskId}'`)
 
     const task = getTaskById(taskId);
+    headers(req, res);
     if (task) {
         res.status(200);
         res.json(task);
@@ -66,6 +68,7 @@ app.post('/tasks', (req, res) => {
     console.log(`Create task`)
     const task = req.body;
     console.log(task);
+    headers(req, res);
     if (validateTask(task)) {
         task.id = crypto.randomUUID();
         createTask(task);
@@ -79,9 +82,32 @@ app.post('/tasks', (req, res) => {
     }
 });
 
+/*
+  TODO #9 Unterstuetzung Pre-Flight request, d.h. fuegen Sie eine Route fuer HTTP OPTIONS und Pfad /* hinzu
+
+  a) Registrieren Sie die Route.
+  b) Setzen Sie die CORS-Header.
+     - Access-Control-Allow-Origin: *
+     - Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE
+     - Access-Control-Allow-Headers: X-Api-Key,Content-Type,Accept
+  c) Setzen Sie den HTTP-Statuscode auf 200.
+  d) Setzen Sie nun zusaetzlich auch in allen anderen Routen die CORS-Header.
+ */
+app.options('/*', (req, res) => {
+    headers(req, res);
+    res.status(200);
+    res.send();
+});
+
 app.listen(8080, () => {
     console.log("Serving request");
 });
+
+function headers(req, res) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Api-Key,Content-Type,Accept');
+}
 
 /*
   TODO #2 Implementieren Sie die Funktion 'getTaskById' mit der 'taskId' als Parameter

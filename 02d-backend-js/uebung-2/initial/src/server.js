@@ -59,6 +59,18 @@ console.log("Server up and running");
  */
 
 /*
+  TODO #9 Unterstuetzung Pre-Flight request, d.h. fuegen Sie eine Route fuer HTTP OPTIONS und Pfad /* hinzu
+
+  a) Registrieren Sie die Route.
+  b) Setzen Sie die CORS-Header.
+     - Access-Control-Allow-Origin: *
+     - Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE
+     - Access-Control-Allow-Headers: X-Api-Key,Content-Type,Accept
+  c) Setzen Sie den HTTP-Statuscode auf 200.
+  d) Setzen Sie nun zusaetzlich auch in allen anderen Routen die CORS-Header.
+ */
+
+/*
   TODO #2 Implementieren Sie die Funktion 'getTaskById' mit der 'taskId' als Parameter
 
   a) Erstellen Sie die Funktion mit dem Parameter.

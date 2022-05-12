@@ -109,6 +109,7 @@ function createNewTask(task) {
         method: 'post',
         headers: {
             'Accept': 'application/json',
+            'Content-Type': 'application/json',
             'X-Api-key': 'ahirsch'
         },
         body: JSON.stringify(task)
