@@ -9,9 +9,8 @@ import java.util.List;
 public class Client {
 
     public static void main(String[] args) {
-        String host = (args.length < 1) ? null : args[0];
         try {
-            Registry registry = LocateRegistry.getRegistry(host);
+            Registry registry = LocateRegistry.getRegistry();
             TaskService stub = (TaskService) registry.lookup("TaskService");
             List<Task> tasks = stub.getTasks();
             System.out.println("response: " + tasks);
