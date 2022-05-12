@@ -55,7 +55,7 @@ async function run() {
 /*
   TODO #1 Funktion 'createApiKey' erstellen
 
-  Legen Sie eine neue Async Funktion an, die keinen Parameter erwartet. Senden Sie einen HTTP-Aufruf via fecht an die
+  Legen Sie eine neue Funktion an, die keinen Parameter erwartet. Senden Sie einen HTTP-Aufruf via fecht an die
   bekannte  REST API, um einen neuen API Key zu erstellen. Die Spezifikation koennen Sie ueber den Link unten oeffnen:
   https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-web/master/02d_apis/uebung-1/initial/todo.yaml
 
@@ -66,7 +66,7 @@ async function run() {
   Header:
     - Accept: application/json
  */
-async function createApiKey() {
+function createApiKey() {
     return fetch('https://dhbw-web-todo.azurewebsites.net/api/apps', {
         method: 'POST',
         headers: {
@@ -91,7 +91,7 @@ function Task(title, notes, due, responsible) {
 /*
   TODO #5 Funktion 'createTask' erstellen
 
-  Legen Sie eine neue Async Funktion an, die einen Parameter 'task' und einen weiteren Parameter 'apiKey' erwartet.
+  Legen Sie eine neue Funktion an, die einen Parameter 'task' und einen weiteren Parameter 'apiKey' erwartet.
   Senden Sie einen HTTP-Aufruf via fetch an die bekannte  REST API, um einen neuen API Key zu erstellen. Die
   Spezifikation koennen Sie ueber den Link unten oeffnen:
   https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-web/master/02d_apis/uebung-1/initial/todo.yaml
@@ -105,7 +105,7 @@ function Task(title, notes, due, responsible) {
     - X-Api-Key: <Wert Parameter 'apiKey'>
   Body: JSON-Repraesentation des Parameters 'task'
  */
-async function createTask(apiKey, task) {
+function createTask(apiKey, task) {
     return fetch('https://dhbw-web-todo.azurewebsites.net/api/tasks', {
         method: 'POST',
         headers: {
@@ -119,7 +119,7 @@ async function createTask(apiKey, task) {
 /*
   TODO #7 Funktion 'getAllTasks' erstellen
 
-  Legen Sie eine neue Async Funktion an, die den Parameter 'apiKey' erwartet. Senden Sie einen HTTP-Aufruf via fetch an
+  Legen Sie eine neue Funktion an, die den Parameter 'apiKey' erwartet. Senden Sie einen HTTP-Aufruf via fetch an
   die bekannte  REST API, um einen neuen API Key zu erstellen. Die Spezifikation koennen Sie ueber den Link unten oeffnen:
   https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-web/master/02d_apis/uebung-1/initial/todo.yaml
 
@@ -131,7 +131,7 @@ async function createTask(apiKey, task) {
     - Accept: application/json
     - X-Api-Key: <Wert Parameter 'apiKey'>
  */
-async function getAllTasks(apiKey) {
+function getAllTasks(apiKey) {
     return fetch('https://dhbw-web-todo.azurewebsites.net/api/tasks', {
         method: 'GET',
         headers: {
