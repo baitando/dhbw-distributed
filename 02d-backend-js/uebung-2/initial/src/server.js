@@ -16,6 +16,7 @@ http
     .createServer(function (req, res) {
         console.log("Serving request");
 
+        /*
         const parsedUrl = url.parse(req.url, true);
         if (parsedUrl.path === "/tasks" && req.method === "GET") {
             res.setHeader("Content-Type", "application/json");
@@ -26,6 +27,8 @@ http
             res.writeHead(404);
             res.end();
         }
+        */
+        res.end();
     })
     .listen(8080);
 console.log("Server up and running");
