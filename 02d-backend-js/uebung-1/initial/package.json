@@ -7,9 +7,5 @@
   "scripts": {
     "start": "node ./src/server.js"
   },
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.1"
-  },
-  "devDependencies": {}
+  "license": "ISC"
 }
