@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This is a sample backend application developed at DHBW",
   "author": "Andreas Hirsch <andreas.hirsch@baitando.com> (https://www.baitando.com)",
-  "main": "server.js",
+  "main": "./src/server.js",
   "scripts": {
     "start": "node ./src/server.js"
   },
