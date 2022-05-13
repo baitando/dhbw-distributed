@@ -8,20 +8,6 @@ async function run() {
        b) Stellen Sie nun auf async/await um und speichern Sie den API-Key in der Konstanten 'apiKey'. Fuer die
           Aufloesung benoetigen Sie 2x await. Geben Sie den API-Key auf der Konsole aus.
      */
-    createApiKey()
-        .then(response => response.json())
-        .then(data => console.log(data.apiKey))
-        .catch(error => console.error(error))
-
-    try {
-        const response = await createApiKey();
-        const data = await response.json();
-        const apiKey = data['apiKey'];
-        console.log(apiKey);
-    } catch(error) {
-
-        console.error(error);
-    }
 
         /*
             TODO #4 Task ueber Konstruktor 'Task' erzeugen und ausgeben
@@ -45,10 +31,6 @@ async function run() {
          */
 }
 
-function showApiKey(maja) {
-    console.log(maja.apiKey);
-}
-
 /*
   TODO #1 Funktion 'createApiKey' erstellen
 
@@ -63,14 +45,6 @@ function showApiKey(maja) {
   Header:
     - Accept: application/json
  */
-function createApiKey() {
-    return fetch('https://dhbw-web-todo.azurewebsites.net/api/apps', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json'
-        }
-    });
-}
 
 /*
   TODO #3 Konstruktor 'Task' erstellen
