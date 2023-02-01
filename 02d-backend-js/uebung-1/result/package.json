@@ -1,11 +1,12 @@
 {
-  "name": "dhbw-sample",
+  "name": "02d-backend-js-1_result",
   "version": "1.0.0",
   "description": "This is a sample backend application developed at DHBW",
   "author": "Andreas Hirsch <andreas.hirsch@baitando.com> (https://www.baitando.com)",
   "main": "server.js",
   "scripts": {
-    "start": "node ./src/server.js"
+    "start": "node ./src/server.js",
+    "stackblitz": "node ./src/server.js"
   },
   "license": "ISC",
   "dependencies": {
