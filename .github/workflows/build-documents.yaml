@@ -9,5 +9,7 @@ jobs:
       image: rstropek/pandoc-latex
     steps:
       - uses: actions/checkout@v2
+      - name: Create output directory
+        run: mkdir -p out
       - name: List files
         run: pandoc -s 00-intro/00-intro.md --metadata-file 00-intro/00-intro.yaml -o out/00-intro.pdf --template eisvogel.latex
