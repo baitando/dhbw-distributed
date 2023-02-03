@@ -8,5 +8,6 @@ jobs:
     container:
       image: rstropek/pandoc-latex
     steps:
+      - uses: actions/checkout@v2
       - name: List files
         run: ls -l
