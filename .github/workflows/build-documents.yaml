@@ -8,8 +8,12 @@ jobs:
     container:
       image: rstropek/pandoc-latex
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Create output directory
         run: mkdir -p out
-      - name: List files
+      - name: Build documents
         run: pandoc -s 00-intro/00-intro.md --metadata-file 00-intro/00-intro.yaml -o out/00-intro.pdf --template eisvogel.latex
+      - uses: actions/upload-artifact@v2
+        with:
+          name: documents
+          path: out
