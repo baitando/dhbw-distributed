@@ -1,7 +1,7 @@
 name: Build Documents
 on:
   push:
-    branches: [ main ]
+    branches: [ main, pandoc ]
 jobs:
   build-job:
     runs-on: ubuntu-latest
