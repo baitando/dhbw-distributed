@@ -11,3 +11,4 @@ function build {
 }
 
 build 00-intro
+build 01-jsonrpc
