@@ -26,30 +26,7 @@ jobs:
         with:
           name: exercises-html
           path: out/html/index.html
-      - name: Compress for GitHub Pages
-        uses: a7ul/tar-action@v1.1.0
-        id: compress
-        with:
-          command: c
-          cwd: ./out/html
-          files: |
-            index.html
-          outPath: out/github-pages.tar.gz
-      - name: Upload to GitHub Pages
-        if: success()
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: 'out'
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: out/html
