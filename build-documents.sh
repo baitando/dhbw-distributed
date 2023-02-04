@@ -1,6 +1,9 @@
-DOCKER_CMD="docker run -it --rm -v $PWD:/work -w /work rstropek/pandoc-latex"
-OUT_DIR="out"
+DOCKER_CMD=$1
+if [ -z "$DOCKER_CMD" ]; then
+  DOCKER_CMD="docker run -it --rm -v $PWD:/work -w /work rstropek/pandoc-latex"
+fi
 
+OUT_DIR="out"
 mkdir -p $OUT_DIR
 
 function build {
