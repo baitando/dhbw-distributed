@@ -31,7 +31,7 @@ jobs:
         id: compress
         with:
           command: c
-          cwd: ./out
+          cwd: ./out/html
           files: |
             index.html
           outPath: out/github-pages.tar.gz
