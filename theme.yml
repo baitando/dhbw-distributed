@@ -10,14 +10,14 @@ header:
   vertical-align: middle
   recto:
     left:
-      content: 'Andreas Rehmann | DHBW Villingen-Schwenningen'
+      content: '{author}'
     right:
-      content: '{document-title}'
+      content: '{chapter-title}'
   verso:
     left:
-      content: 'Andreas Rehmann | DHBW Villingen-Schwenningen'
+      content: '{author}'
     right:
-      content: '{document-title}'
+      content: '{chapter-title}'
 
 footer:
   margin: 0.5cm
@@ -34,3 +34,7 @@ footer:
       content: 'Entwicklung Verteilter Systeme (Lehrveranstaltung 2: Verteilte Systeme)'
     right:
       content: 'Seite {page-number} von {page-count}'
+
+title-page:
+  logo:
+    image: image:logo.svg[pdfwidth=2.5in,align=center]

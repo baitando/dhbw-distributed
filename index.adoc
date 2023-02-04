@@ -1,0 +1,10 @@
+= Übungen zu verteilten Systemen
+Andreas Rehmann | DHBW Villingen-Schwenningen
+v2023-1
+:doctype: book
+:toc: left
+:toc-title: Inhaltsverzeichnis
+
+include::00-intro/00-intro.adoc[]
+
+include::01-jsonrpc/01-jsonrpc.adoc[]

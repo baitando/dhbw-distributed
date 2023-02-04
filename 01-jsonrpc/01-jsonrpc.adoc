@@ -1,6 +1,4 @@
-== Allgemeine Hinweise zu den Übungen
-
-=== Kontext
+== Übungsaufgabe zu Modul 2a (JSON-RPC)
 
 Die Anwendung `TODO` ist ein webbasierter Aufgabenplaner, der im Zuge der Lehrveranstaltung 1 zum Thema "Web-Programmierung" entwickelt wurde und daher als bekannt vorausgesetzt wird.
 
@@ -22,17 +20,6 @@ In diesem Fall richten Sie das Projekt folgendermaßen ein:
 * Entpacken Sie das Zip-Archiv.
 * Zum Bearbeiten der Dateien öffnen Sie diese im Text-Editor.
 * Zum Anzeigen des Dokuments öffnen Sie dieses im Browser.
-
-Empfohlen wird die Nutzung des kostenlosen Online-Tools <https://stackblitz.com>, welches die komplette Entwicklungsumgebung im Web-Browser bereitstellt und keine Registrierung erfordert.
-In diesem Fall reicht ein Web-Browser auf Ihrem Rechner aus.
-
-* Öffnen Sie die URL `<initial-ide>` im Browser.
-* Nach einer Änderung müssen Sie das Dokument speichern und die Vorschau im rechten Teil des Fensters aktualisieren.
-* Sie können außerdem die rechts dargestellte URL verwenden und die Seite direkt im Browser aufrufen.
-* Die Dateien aus dem Editor können Sie sich über die Export-Funktion (das Wolken-Icon im Screenshot) als Zip-Archiv herunterladen.
-
-
-
 
 Empfohlen wird die Nutzung des kostenlosen Online-Tools <https://stackblitz.com>, welches die komplette Entwicklungsumgebung im Web-Browser bereitstellt und keine Registrierung erfordert.
 In diesem Fall reicht ein Web-Browser auf Ihrem Rechner aus.
