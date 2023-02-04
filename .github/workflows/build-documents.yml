@@ -33,8 +33,8 @@ jobs:
           command: c
           cwd: ./out
           files: |
-            .
-          outPath: out/github-pages
+            index.html
+          outPath: out/github-pages.tar.gz
       - name: Upload to GitHub Pages
         if: success()
         uses: actions/upload-pages-artifact@v1
