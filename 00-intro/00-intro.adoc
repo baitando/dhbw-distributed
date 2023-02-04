@@ -13,6 +13,7 @@ Als Teil der Aufgabenstellung finden Sie verschiedene aufgabenspezifische URLs, 
 * `<initial-ide`: Verweist auf die Online-Entwicklungsumgebung, in der bereits der initiale Quellcode geladen ist.
 
 Die Bearbeitung aller Aufgaben kann lokal auf Ihrem Rechner erfolgen, ist aber nicht empfohlen. Sie benötigen hierfür:
+
 * Einen Web-Browser wie z.B. Firefox (<https://www.mozilla.org/de/firefox/new/>).
 * Einen Text-Editor wie z.B. das kostenlose Visual Studio Code (<https://code.visualstudio.com/>).
 
