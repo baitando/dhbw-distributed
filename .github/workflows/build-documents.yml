@@ -26,11 +26,20 @@ jobs:
         with:
           name: exercises-html
           path: out/html/index.html
+      - name: Compress for GitHub Pages
+        uses: a7ul/tar-action@v1.1.0
+        id: compress
+        with:
+          command: c
+          cwd: ./out
+          files: |
+            .
+          outPath: out/github-pages
       - name: Upload to GitHub Pages
         if: success()
         uses: actions/upload-pages-artifact@v1
         with:
-          path: 'out/html'
+          path: 'out'
   deploy:
     needs: build
     permissions:
