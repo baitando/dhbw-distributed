@@ -27,6 +27,7 @@ jobs:
           name: exercises-html
           path: out/html/index.html
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Download GitHub Pages content
