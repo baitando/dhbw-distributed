@@ -13,7 +13,7 @@ jobs:
       - name: Create output directory
         run: mkdir -p out
       - name: Build documents
-        run: build-documents.sh pandoc
+        run: ./build-documents.sh pandoc
       - name: Upload documents
         uses: actions/upload-artifact@v2
         with:
