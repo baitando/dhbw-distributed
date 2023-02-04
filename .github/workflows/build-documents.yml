@@ -14,8 +14,27 @@ jobs:
         run: mkdir -p out
       - name: Build documents
         run: ./build-documents.sh asciidoctor-pdf asciidoctor
-      - name: Upload documents
+      - name: Upload exercise document as PDF
+        if: success()
         uses: actions/upload-artifact@v3
         with:
-          name: documents
-          path: out
+          name: exercises-pdf
+          path: out/pdf/index.pdf
+      - name: Upload exercise document as HTML
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: exercises-html
+          path: out/html/index.html
+      - name: Setup pages
+        if: success()
+        uses: actions/configure-pages@v3
+      - name: Upload HTML
+        if: success()
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: 'out/html'
+      - name: Deploy to GitHub Pages
+        if: success()
+        id: deployment
+        uses: actions/deploy-pages@v1
