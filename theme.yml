@@ -1,0 +1,36 @@
+extends: default
+
+page:
+  margin: [ 2.5cm, 1.75cm, 2.5cm, 1.75cm ]
+
+header:
+  margin: 0.5cm
+  height: 1.5cm
+  border-width: 0.25
+  vertical-align: middle
+  recto:
+    left:
+      content: 'Andreas Rehmann | DHBW Villingen-Schwenningen'
+    right:
+      content: '{document-title}'
+  verso:
+    left:
+      content: 'Andreas Rehmann | DHBW Villingen-Schwenningen'
+    right:
+      content: '{document-title}'
+
+footer:
+  margin: 0.5cm
+  height: 1.5cm
+  border-width: 0.25
+  vertical-align: middle
+  recto:
+    left:
+      content: 'Entwicklung Verteilter Systeme (Lehrveranstaltung 2: Verteilte Systeme)'
+    right:
+      content: 'Seite {page-number} von {page-count}'
+  verso:
+    left:
+      content: 'Entwicklung Verteilter Systeme (Lehrveranstaltung 2: Verteilte Systeme)'
+    right:
+      content: 'Seite {page-number} von {page-count}'
