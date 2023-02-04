@@ -30,13 +30,16 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Check out sources
+        uses: actions/checkout@v3
       - name: Download GitHub Pages content
         uses: actions/download-artifact@v3
         with:
           name: exercises-html
+          path: out/html
       - name: Display structure of downloaded files
         run: ls -R
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: .
+          folder: out/html
