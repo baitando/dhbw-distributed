@@ -1,10 +1,28 @@
 = Übungen zu verteilten Systemen
 Andreas Rehmann | DHBW Villingen-Schwenningen
 v2023-1
+:sectnums:
+:!chapter-signifier:
 :doctype: book
 :toc: left
 :toc-title: Inhaltsverzeichnis
 
+:!sectnums:
+:imagesdir: 00-intro
 include::00-intro/00-intro.adoc[]
 
+:sectnums:
+:imagesdir: 01-jsonrpc
 include::01-jsonrpc/01-jsonrpc.adoc[]
+
+:imagesdir: 02c-auffrischung-js/uebung-1
+include::02c-auffrischung-js/uebung-1/02c-auffrischung-js-1.adoc[]
+
+:imagesdir: 02c-auffrischung-js/uebung-2
+include::02c-auffrischung-js/uebung-2/02c-auffrischung-js-2.adoc[]
+
+:imagesdir: 02d-backend-js/uebung-1
+include::02d-backend-js/uebung-1/02d-backend-js-1.adoc[]
+
+:imagesdir: 02d-backend-js/uebung-2
+include::02d-backend-js/uebung-2/02d-backend-js-2.adoc[]

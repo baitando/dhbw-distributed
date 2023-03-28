@@ -18,3 +18,13 @@ mkdir -p $OUT_DIR_PDF
 
 $HTML_CMD -D "$OUT_DIR_HTML" index.adoc
 $PDF_CMD -a pdf-theme=theme.yml -D "$OUT_DIR_PDF" index.adoc
+
+
+function copy() {
+  mkdir -p $OUT_DIR_HTML/"$1"
+  cp ./"$1"/*.png $OUT_DIR_HTML/"$1"/
+}
+
+
+copy 01-jsonrpc
+copy 02d-backend-js/uebung-2

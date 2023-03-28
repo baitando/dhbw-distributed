@@ -1,0 +1,40 @@
+== Übungsaufgabe 1 zu Modul 2d (Javascript im Backend)
+
+In dieser Übungsaufgabe wird ein Teil der Backend-API der aus der vorhergehenden Lehrveranstaltung bekannten Web-Anwendung mittels Javascript und den Bordmitteln von Node.js realisiert.
+
+=== Platzhalter
+
+Nachfolgend sind die spezifischen Parameter, die in der grundlegenden Einführung zu den Übungen erwähnt sind.
+
+|===
+|Platzhalter |Wert
+
+|`<initial-github>`
+|https://github.com/baitando/dhbw-distributed/tree/main/02d-backend-js/uebung-1/initial
+
+|`<initial-download>`
+|https://downgit.github.io/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/02d-backend-js/uebung-1/initial
+
+|`<initial-ide`
+|https://stackblitz.com/fork/github/baitando/dhbw-distributed/tree/main/02d-backend-js/uebung-1/initial?file=index.html&terminal=stackblitz&title=%C3%9Cbungsaufgabe%201%20%7C%20Modul%202d%20%28Javascript%20im%20Backend%29
+|===
+
+=== Aufgabenbeschreibung
+
+1. Werfen Sie zum Auffrischen einen Blick auf die API-Spezifikation der letzten Lehrveranstaltung.
+Sie können diese direkt im online verfügbaren Swagger-Editor anzeigen, indem Sie die URL https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-web/master/02d_apis/uebung-1/initial/todo.yaml im Browser öffnen.
++
+Sehen Sie sich speziell `GET /tasks` für die Abfrage der Liste aller Einträge an.
+Dies wird der erste Teil der API sein, deren Backend im nächsten Schritt entwickelt wird.
+2. Bearbeiten Sie die einzelnen Aufgaben, die im Quellcode als Kommentare hinterlegt sind.
+Folgen Sie bei der Abarbeitung der Nummerierung der Aufgaben.
+3. Nach den Aufgaben im Quellcode folgt die Implementierung der Datenspeicherung.
+Implementieren Sie diesen Teil der API und schreiben Sie neu angelegte Einträge in die Datei.
+4. Implementieren Sie die Abfrage eines einzelnen Eintrags sowie die Löschung eines einzelnen Eintrags, so wie in der API spezifiziert.
+
+=== Lösungsbeispiel
+
+Eine beispielhafte Lösung finden Sie auf GitHub unter https://github.com/baitando/dhbw-distributed/tree/main/02d-backend-js/uebung-1/result.
+
+Sie können dieses Lösungsbeispiel durch Öffnen der URL https://stackblitz.com/github/baitando/dhbw-distributed/tree/main/02d-backend-js/uebung-1/result?file=index.html&terminal=stackblitz&title=L%C3%B6sungsbeispiel%20%C3%9Cbungsaufgabe%201%20%7C%20Modul%202d%20%28Javascript%20im%20Backend%29 im Browser direkt in der Online-Entwicklungsumgebung betrachten.
+
