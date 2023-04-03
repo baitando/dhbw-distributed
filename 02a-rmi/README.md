@@ -1,2 +1,5 @@
-Run rmiregistry in target/classes.
-This will pick up the directory for the classpath
+# RMI Sample
+
+```shell
+rmiregistry -J-Djava.class.path=./target/classes
+```
