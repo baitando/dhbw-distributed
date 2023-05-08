@@ -13,7 +13,7 @@ Nachfolgend sind die spezifischen Parameter, die in der grundlegenden Einführun
 |https://github.com/baitando/dhbw-distributed/tree/main/01-jsonrpc/initial
 
 |`<initial-download>`
-|https://downgit.github.io/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/01-jsonrpc/initial
+|https://baitando.github.io/down-git/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/01-jsonrpc/initial
 
 |`<initial-ide`
 |https://stackblitz.com/fork/github/baitando/dhbw-distributed/tree/main/01-jsonrpc/initial?file=index.html&terminal=stackblitz&title=%C3%9Cbungsaufgabe%20%7C%20Modul%202a%20%28JSON-RPC%29

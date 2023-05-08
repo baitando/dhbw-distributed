@@ -13,7 +13,7 @@ Nachfolgend sind die spezifischen Parameter, die in der grundlegenden Einführun
 |https://github.com/baitando/dhbw-distributed/tree/main/02c-auffrischung-js/uebung-1/initial
 
 |`<initial-download>`
-|https://downgit.github.io/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/02c-auffrischung-js/uebung-1/initial
+|https://baitando.github.io/down-git/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/02c-auffrischung-js/uebung-1/initial
 
 |`<initial-ide`
 |https://stackblitz.com/fork/github/baitando/dhbw-distributed/tree/main/02c-auffrischung-js/uebung-1/initial?file=index.html&terminal=stackblitz&title=%C3%9Cbungsaufgabe%201%20%7C%20Modul%202c%20%28Auffrischung%20Javascript%29
