@@ -9,7 +9,7 @@
     "dev": "./node_modules/nodemon/bin/nodemon.js -e .yaml ./src/server.js"
   },
   "stackblitz": {
-    "startCommand": "npm dev"
+    "startCommand": "npm run dev"
   },
   "license": "ISC",
   "dependencies": {
