@@ -1,0 +1,97 @@
+openapi: 3.0.3
+info:
+  title: DHBW Powertrack
+  description: This is the API provided by the Powertrack app developed at DHBW.
+  version: 1.0.0
+paths:
+  /records:
+    get:
+      summary: Returns a list of all power records.
+      responses:
+        200:
+          description: List of power records retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecordList'
+        500:
+          description: Internal server error. The response payload is empty.
+    post:
+      summary: Creates a new record.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewRecord'
+      responses:
+        201:
+          description: Record created successfully. The response payload is empty.
+          headers:
+            Location:
+              description: URL of the created record.
+              schema:
+                type: string
+        400:
+          description: Invalid request data. Occurs, if a required attribute in the request payload is missing. The response payload is empty.
+        500:
+          description: Internal server error. The response payload is empty.
+
+  /records/{record-id}:
+    get:
+      summary: Returns a specific record.
+      parameters:
+        - in: path
+          required: true
+          name: record-id
+          description: ID of the power record to retrieve.
+          schema:
+            type: string
+      responses:
+        400:
+          description: Power record retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExistingRecord'
+        404:
+          description: Power record with given ID does not exist. The response payload is empty.
+        500:
+          description: Internal server error. The response payload is empty.
+
+components:
+  schemas:
+    RecordList:
+      required:
+        - items
+      properties:
+        items:
+          description: List of all records.
+          type: array
+          items:
+            $ref: '#/components/schemas/ExistingRecord'
+    NewRecord:
+      required:
+        - date
+        - reading
+      properties:
+        date:
+          description: Date when the value was read from the counter.
+          type: string
+          format: date
+          example: '2023-01-28'
+        reading:
+          description: Value of the counter given in unit kWh.
+          type: number
+          format: float
+          example: 234.13
+    ExistingRecord:
+      allOf:
+        - $ref: '#/components/schemas/NewRecord'
+        - type: object
+          required:
+            - id
+          properties:
+            id:
+              description: Unique identifier of the given record.
+              type: string
+              example: 'my-record-id'
