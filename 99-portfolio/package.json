@@ -5,15 +5,19 @@
   "author": "Andreas Rehmann <andreas.rehmann@baitando.com> (https://www.baitando.com)",
   "main": "server.js",
   "scripts": {
-    "start": "node ./src/server.js"
+    "start": "node ./src/server.js",
+    "dev": "./node_modules/nodemon/bin/nodemon.js -e .yaml ./src/server.js"
   },
   "stackblitz": {
-    "startCommand": "npm start"
+    "startCommand": "npm dev"
   },
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
     "swagger-ui-express": "^4.6.2",
     "yaml": "^2.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
