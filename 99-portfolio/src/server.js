@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('yaml').parse(fs.readFileSync('../spec/powertrack.yaml', 'utf8'));
+const swaggerDocument = require('yaml').parse(fs.readFileSync('./spec/powertrack.yaml', 'utf8'));
 app.use('/swagger-ui', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(8080, () => {

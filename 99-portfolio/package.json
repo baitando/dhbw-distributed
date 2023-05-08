@@ -5,8 +5,10 @@
   "author": "Andreas Rehmann <andreas.rehmann@baitando.com> (https://www.baitando.com)",
   "main": "server.js",
   "scripts": {
-    "start": "node ./src/server.js",
-    "stackblitz": "node ./src/server.js"
+    "start": "node ./src/server.js"
+  },
+  "stackblitz": {
+    "startCommand": "npm start"
   },
   "license": "ISC",
   "dependencies": {
