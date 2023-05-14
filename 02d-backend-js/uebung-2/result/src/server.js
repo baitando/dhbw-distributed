@@ -106,6 +106,7 @@ function headers(req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'X-Api-Key,Content-Type,Accept');
+    res.setHeader('Access-Control-Allow-Private-Network', 'true');
 }
 
 /*
