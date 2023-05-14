@@ -3,17 +3,23 @@
   "version": "1.0.0",
   "description": "This is a sample backend application developed at DHBW",
   "author": {
-    "name": "Andreas Hirsch",
-    "email": "andreas.hirsch@baitando.com",
+    "name": "Andreas Rehmann",
+    "email": "andreas.rehmann@baitando.com",
     "url": "https://www.baitando.com"
   },
-  "main": "server.js",
+  "main": "./src/server.js",
   "scripts": {
     "start": "node ./src/server.js",
-    "stackblitz": "node ./src/server.js"
+    "dev": "./node_modules/nodemon/bin/nodemon.js ./src/server.js"
+  },
+  "stackblitz": {
+    "startCommand": "npm run dev"
   },
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }

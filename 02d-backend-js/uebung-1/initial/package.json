@@ -2,7 +2,11 @@
   "name": "02d-backend-js-1_initial",
   "version": "1.0.0",
   "description": "This is a sample backend application developed at DHBW",
-  "author": "Andreas Hirsch <andreas.hirsch@baitando.com> (https://www.baitando.com)",
+  "author": {
+    "name": "Andreas Rehmann",
+    "email": "andreas.rehmann@baitando.com",
+    "url": "https://www.baitando.com"
+  },
   "main": "./src/server.js",
   "scripts": {
     "start": "node ./src/server.js",
