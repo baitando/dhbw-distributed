@@ -16,8 +16,8 @@ mkdir -p $OUT_DIR_HTML
 mkdir -p $OUT_DIR_PDF
 
 
-$HTML_CMD -D "$OUT_DIR_HTML" index.adoc
-$PDF_CMD -a pdf-theme=theme.yml -D "$OUT_DIR_PDF" index.adoc
+$HTML_CMD -D "$OUT_DIR_HTML" 01-grundlagen.adoc
+$PDF_CMD -a pdf-theme=theme.yml -D "$OUT_DIR_PDF" 01-grundlagen.adoc
 
 
 function copy() {

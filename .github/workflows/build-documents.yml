@@ -19,7 +19,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: exercises-pdf
-          path: out/pdf/index.pdf
+          path: out/pdf/01-grundlagen.pdf
       - name: Upload exercise document as HTML
         if: success()
         uses: actions/upload-artifact@v3
