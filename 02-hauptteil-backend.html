@@ -453,11 +453,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_werkzeuge">Werkzeuge</a></li>
 </ul>
 </li>
-<li><a href="#_übungsaufgabe_zu_modul_2a_rest_webservices">1. Übungsaufgabe zu Modul 2a (REST-Webservices)</a>
+<li><a href="#_übungsaufgabe_1_zu_modul_2d_javascript_im_backend">1. Übungsaufgabe 1 zu Modul 2d (Javascript im Backend)</a>
 <ul class="sectlevel2">
 <li><a href="#_platzhalter">1.1. Platzhalter</a></li>
 <li><a href="#_aufgabenbeschreibung">1.2. Aufgabenbeschreibung</a></li>
 <li><a href="#_lösungsbeispiel">1.3. Lösungsbeispiel</a></li>
+</ul>
+</li>
+<li><a href="#_übungsaufgabe_2_zu_modul_2d_javascript_im_backend">2. Übungsaufgabe 2 zu Modul 2d (Javascript im Backend)</a>
+<ul class="sectlevel2">
+<li><a href="#_platzhalter_2">2.1. Platzhalter</a></li>
+<li><a href="#_aufgabenbeschreibung_2">2.2. Aufgabenbeschreibung</a></li>
+<li><a href="#_lösungsbeispiel_2">2.3. Lösungsbeispiel</a></li>
 </ul>
 </li>
 </ul>
@@ -567,10 +574,10 @@ In diesem Fall reicht ein Web-Browser auf Ihrem Rechner aus.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_übungsaufgabe_zu_modul_2a_rest_webservices">1. Übungsaufgabe zu Modul 2a (REST-Webservices)</h2>
+<h2 id="_übungsaufgabe_1_zu_modul_2d_javascript_im_backend">1. Übungsaufgabe 1 zu Modul 2d (Javascript im Backend)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Diese Aufgabe dient der Übung zur Arbeit mit Spezifikationen im OpenAPI-Format.</p>
+<p>In dieser Übungsaufgabe wird ein Teil der Backend-API der aus der vorhergehenden Lehrveranstaltung bekannten Web-Anwendung mittels Javascript und den Bordmitteln von Node.js realisiert.</p>
 </div>
 <div class="sect2">
 <h3 id="_platzhalter">1.1. Platzhalter</h3>
@@ -591,73 +598,157 @@ In diesem Fall reicht ein Web-Browser auf Ihrem Rechner aus.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;initial-github&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/baitando/dhbw-distributed/tree/main/02a-webservices/02-uebung-rest/initial" class="bare">https://github.com/baitando/dhbw-distributed/tree/main/02a-webservices/02-uebung-rest/initial</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-1/initial" class="bare">https://github.com/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-1/initial</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;initial-download&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://baitando.github.io/down-git/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/02a-webservices/02-uebung-rest/initial" class="bare">https://baitando.github.io/down-git/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/02a-webservices/02-uebung-rest/initial</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://baitando.github.io/down-git/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-1/initial" class="bare">https://baitando.github.io/down-git/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-1/initial</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;initial-ide&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-distributed/main/02a-webservices/02-uebung-rest/initial/todo.yaml" class="bare">https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-distributed/main/02a-webservices/02-uebung-rest/initial/todo.yaml</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;initial-ide</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://stackblitz.com/fork/github/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-1/initial?file=src/server.js&amp;initialpath=/tasks&amp;title=%C3%9Cbungsaufgabe%201%20%7C%20Modul%202d%20%28Javascript%20im%20Backend%29" class="bare">https://stackblitz.com/fork/github/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-1/initial?file=src/server.js&amp;initialpath=/tasks&amp;title=%C3%9Cbungsaufgabe%201%20%7C%20Modul%202d%20%28Javascript%20im%20Backend%29</a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
 <h3 id="_aufgabenbeschreibung">1.2. Aufgabenbeschreibung</h3>
-<div class="paragraph">
-<p>Nutzen Sie die offizielle Dokumentation des OpenAPI-Formats unter <a href="https://spec.openapis.org/oas/v3.1.0" class="bare">https://spec.openapis.org/oas/v3.1.0</a> als Quelle, um die Aufgabenstellung zu bearbeiten.</p>
-</div>
-<div class="paragraph">
-<p>Sie können diese Spezifikation mittels des online verfügbaren Werkzeugs <a href="https://editor.swagger.io/">Swagger Editor</a> bearbeiten und visuell darstellen.
-Kopieren Sie dazu den Inhalt der Datei <code>todo.yaml</code> in den Editor.
-Alternativ können Sie den Swagger Editor auch vorbefüllt mit der initialen Spezifikation über die URL <a href="https://github.com/baitando/dhbw-distributed/blob/main/02a-webservices/02-uebung-rest/initial/todo.yaml" class="bare">https://github.com/baitando/dhbw-distributed/blob/main/02a-webservices/02-uebung-rest/initial/todo.yaml</a> öffnen.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Prüfung und Korrektur</strong>: Finden und korrigieren Sie den offensichtlich falsch gewählten HTTP-Statuscode in der bereitgestellten Spezifikation. Es handelt sich um exakt einen zu korrigierenden HTTP-Statuscode.</p>
-</li>
-<li>
-<p><strong>Erweiterung</strong>: Erweitern Sie die Spezifikation um die Möglichkeit, alle Aufgaben in einem Aufruf zu löschen (Pfad <code>/tasks</code>). Das Backend am Server stellt diese Funktionalität bereits zur Verfügung, d.h. Sie können den Aufruf direkt testen. Berücksichtigen Sie bei den HTTP-Statuscodes der Rückgabe die zwei Fälle,</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>dass die Verarbeitung erfolgreich war und keine Rückgabe erfolgt und</p>
-</li>
-<li>
-<p>dass ein interner Server-Fehler aufgetreten ist.</p>
-</li>
-</ol>
+<p>Werfen Sie zum Auffrischen einen Blick auf die API-Spezifikation der letzten Lehrveranstaltung.
+Sie können diese direkt im online verfügbaren Swagger-Editor anzeigen, indem Sie die URL <a href="https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-web/master/02d_apis/uebung-1/initial/todo.yaml" class="bare">https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-web/master/02d_apis/uebung-1/initial/todo.yaml</a> im Browser öffnen.</p>
+<div class="paragraph">
+<p>Sehen Sie sich speziell <code>GET /tasks</code> für die Abfrage der Liste aller Einträge an.
+Dies wird der erste Teil der API sein, deren Backend im nächsten Schritt entwickelt wird.</p>
 </div>
 </li>
 <li>
-<p><strong>Erweiterung</strong>: Erweitern Sie die Spezifikation um die Möglichkeit, eine einzelne Aufgabe zu löschen (Pfad <code>/tasks/{task_id}</code>. Das Backend am Server stellt diese Funktionalität bereits zur Verfügung, d.h. Sie können den Aufruf direkt testen. Berücksichtigen Sie bei den HTTP-Statuscodes der Rückgabe die drei Fälle,</p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>dass die Verarbeitung erfolgreich war und keine Rückgabe erfolgt,</p>
+<p>Bearbeiten Sie die einzelnen Aufgaben, die im Quellcode als Kommentare hinterlegt sind.
+Folgen Sie bei der Abarbeitung der Nummerierung der Aufgaben.</p>
 </li>
 <li>
-<p>dass ein interner Server-Fehler aufgetreten ist und</p>
+<p>Nach den Aufgaben im Quellcode folgt die Implementierung der Datenspeicherung.
+Implementieren Sie diesen Teil der API und schreiben Sie neu angelegte Einträge in die Datei.</p>
 </li>
 <li>
-<p>dass der zu löschende Eintrag mit der übergebenen ID nicht existiert.</p>
+<p>Implementieren Sie die Abfrage eines einzelnen Eintrags sowie die Löschung eines einzelnen Eintrags, so wie in der API spezifiziert.</p>
 </li>
 </ol>
-</div>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_lösungsbeispiel">1.3. Lösungsbeispiel</h3>
 <div class="paragraph">
-<p>Eine beispielhafte Lösung finden Sie auf GitHub unter <a href="https://github.com/baitando/dhbw-distributed/tree/main/02a-webservices/02-uebung-rest/result" class="bare">https://github.com/baitando/dhbw-distributed/tree/main/02a-webservices/02-uebung-rest/result</a>.</p>
+<p>Eine beispielhafte Lösung finden Sie auf GitHub unter <a href="https://github.com/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-1/result" class="bare">https://github.com/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-1/result</a>.</p>
 </div>
 <div class="paragraph">
-<p>Sie können dieses Lösungsbeispiel durch Öffnen der URL <a href="https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-distributed/main/02a-webservices/02-uebung-rest/result/todo.yaml" class="bare">https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-distributed/main/02a-webservices/02-uebung-rest/result/todo.yaml</a> im Browser direkt in der Online-Entwicklungsumgebung betrachten.</p>
+<p>Sie können dieses Lösungsbeispiel durch Öffnen der URL <a href="https://stackblitz.com/github/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-1/result?file=src/server.js&amp;initialpath=/tasks&amp;title=L%C3%B6sungsbeispiel%20%C3%9Cbungsaufgabe%201%20%7C%20Modul%202d%20%28Javascript%20im%20Backend%29" class="bare">https://stackblitz.com/github/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-1/result?file=src/server.js&amp;initialpath=/tasks&amp;title=L%C3%B6sungsbeispiel%20%C3%9Cbungsaufgabe%201%20%7C%20Modul%202d%20%28Javascript%20im%20Backend%29</a> im Browser direkt in der Online-Entwicklungsumgebung betrachten.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_übungsaufgabe_2_zu_modul_2d_javascript_im_backend">2. Übungsaufgabe 2 zu Modul 2d (Javascript im Backend)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In dieser Übungsaufgabe wird ein Teil der Backend-API der aus der vorhergehenden Lehrveranstaltung bekannten Web-Anwendung mittels Javascript und den Bordmitteln von Node.js realisiert.</p>
+</div>
+<div class="sect2">
+<h3 id="_platzhalter_2">2.1. Platzhalter</h3>
+<div class="paragraph">
+<p>Nachfolgend sind die spezifischen Parameter, die in der grundlegenden Einführung zu den Übungen erwähnt sind.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Platzhalter</th>
+<th class="tableblock halign-left valign-top">Wert</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;initial-github&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-2/initial" class="bare">https://github.com/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-2/initial</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;initial-download&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://baitando.github.io/down-git/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-2/initial" class="bare">https://baitando.github.io/down-git/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-2/initial</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;initial-ide</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://stackblitz.com/fork/github/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-2/initial?file=src/server.js&amp;initialpath=/tasks&amp;title=%C3%9Cbungsaufgabe%202%20%7C%20Modul%202d%20%28Javascript%20im%20Backend%29" class="bare">https://stackblitz.com/fork/github/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-2/initial?file=src/server.js&amp;initialpath=/tasks&amp;title=%C3%9Cbungsaufgabe%202%20%7C%20Modul%202d%20%28Javascript%20im%20Backend%29</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_aufgabenbeschreibung_2">2.2. Aufgabenbeschreibung</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Bearbeiten Sie die Aufgaben bis einschließlich TODO #8, die im Quellcode als Kommentare hinterlegt sind.
+Folgen Sie bei der Abarbeitung der Nummerierung der Aufgaben.</p>
+</li>
+<li>
+<p>Versuchen Sie nun eine erste Integration mit dem Frontend der vorhergehenden Lehrveranstaltung.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha">
+<li>
+<p>Öffnen Sie <a href="https://dhbwweb.z6.web.core.windows.net/konfiguration.html" class="bare">https://dhbwweb.z6.web.core.windows.net/konfiguration.html</a>.</p>
+</li>
+<li>
+<p>Ändern Sie die URL im Eingabefeld auf die URL Ihres Servers und speichern Sie.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="02b-backend-js/uebung-2/step-2b.png" alt="step 2b" width="700px">
+</div>
+</div>
+</li>
+<li>
+<p>Öffnen Sie die Entwicklerkonsole und wechseln Sie in den Bereich, der Ihnen die Netzwerkaktivität zeigt.</p>
+</li>
+<li>
+<p>Öffnen Sie nun <a href="https://dhbwweb.z6.web.core.windows.net/liste.html" class="bare">https://dhbwweb.z6.web.core.windows.net/liste.html</a>.</p>
+</li>
+<li>
+<p>Die Liste sollte leer bleiben.
+In der Entwicklerkonsole sollten Sie nun zwei Fehler erkennen können.</p>
+<div class="imageblock">
+<div class="content">
+<img src="02b-backend-js/uebung-2/step-2e.png" alt="step 2e">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Bearbeiten Sie nun Aufgabe TODO #9.</p>
+</li>
+<li>
+<p>Testen Sie erneut mit dem Frontend, indem Sie <a href="https://dhbwweb.z6.web.core.windows.net/konfiguration.html" class="bare">https://dhbwweb.z6.web.core.windows.net/konfiguration.html</a> aufrufen.
+Sie sollten nun Einträge in der Liste sehen.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="02b-backend-js/uebung-2/step-4.png" alt="step 4" width="700px">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lösungsbeispiel_2">2.3. Lösungsbeispiel</h3>
+<div class="paragraph">
+<p>Eine beispielhafte Lösung finden Sie auf GitHub unter <a href="https://github.com/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-1/result" class="bare">https://github.com/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-1/result</a>.</p>
+</div>
+<div class="paragraph">
+<p>Sie können dieses Lösungsbeispiel durch Öffnen der URL <a href="https://stackblitz.com/github/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-2/result?file=src/server.js&amp;initialpath=/tasks&amp;title=L%C3%B6sungsbeispiel%20%C3%9Cbungsaufgabe%202%20%7C%20Modul%202d%20%28Javascript%20im%20Backend%29" class="bare">https://stackblitz.com/github/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-2/result?file=src/server.js&amp;initialpath=/tasks&amp;title=L%C3%B6sungsbeispiel%20%C3%9Cbungsaufgabe%202%20%7C%20Modul%202d%20%28Javascript%20im%20Backend%29</a> im Browser direkt in der Online-Entwicklungsumgebung betrachten.</p>
 </div>
 </div>
 </div>
