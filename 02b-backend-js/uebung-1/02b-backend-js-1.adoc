@@ -10,13 +10,13 @@ Nachfolgend sind die spezifischen Parameter, die in der grundlegenden Einführun
 |Platzhalter |Wert
 
 |`<initial-github>`
-|https://github.com/baitando/dhbw-distributed/tree/main/02d-backend-js/uebung-1/initial
+|https://github.com/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-1/initial
 
 |`<initial-download>`
-|https://baitando.github.io/down-git/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/02d-backend-js/uebung-1/initial
+|https://baitando.github.io/down-git/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-1/initial
 
 |`<initial-ide`
-|https://stackblitz.com/fork/github/baitando/dhbw-distributed/tree/main/02d-backend-js/uebung-1/initial?file=src/server.js&initialpath=/tasks&title=%C3%9Cbungsaufgabe%201%20%7C%20Modul%202d%20%28Javascript%20im%20Backend%29
+|https://stackblitz.com/fork/github/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-1/initial?file=src/server.js&initialpath=/tasks&title=%C3%9Cbungsaufgabe%201%20%7C%20Modul%202d%20%28Javascript%20im%20Backend%29
 |===
 
 === Aufgabenbeschreibung
@@ -34,7 +34,7 @@ Implementieren Sie diesen Teil der API und schreiben Sie neu angelegte Einträge
 
 === Lösungsbeispiel
 
-Eine beispielhafte Lösung finden Sie auf GitHub unter https://github.com/baitando/dhbw-distributed/tree/main/02d-backend-js/uebung-1/result.
+Eine beispielhafte Lösung finden Sie auf GitHub unter https://github.com/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-1/result.
 
-Sie können dieses Lösungsbeispiel durch Öffnen der URL https://stackblitz.com/github/baitando/dhbw-distributed/tree/main/02d-backend-js/uebung-1/result?file=src/server.js&initialpath=/tasks&title=L%C3%B6sungsbeispiel%20%C3%9Cbungsaufgabe%201%20%7C%20Modul%202d%20%28Javascript%20im%20Backend%29 im Browser direkt in der Online-Entwicklungsumgebung betrachten.
+Sie können dieses Lösungsbeispiel durch Öffnen der URL https://stackblitz.com/github/baitando/dhbw-distributed/tree/main/02b-backend-js/uebung-1/result?file=src/server.js&initialpath=/tasks&title=L%C3%B6sungsbeispiel%20%C3%9Cbungsaufgabe%201%20%7C%20Modul%202d%20%28Javascript%20im%20Backend%29 im Browser direkt in der Online-Entwicklungsumgebung betrachten.
 

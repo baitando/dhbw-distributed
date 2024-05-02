@@ -1,0 +1,20 @@
+= Übungen zu verteilten Systemen (Grundlagen)
+Andreas Rehmann | DHBW Villingen-Schwenningen
+v2024-1
+:sectnums:
+:!chapter-signifier:
+:doctype: book
+:toc: left
+:toc-title: Inhaltsverzeichnis
+
+:!sectnums:
+:imagesdir: 00-intro
+include::00-intro/00-intro.adoc[]
+
+:sectnums:
+:imagesdir: 02b-backend-js/uebung-1
+include::02b-backend-js/uebung-1/02b-backend-js-1.adoc[]
+
+:sectnums:
+:imagesdir: 02b-backend-js/uebung-2
+include::02b-backend-js/uebung-2/02b-backend-js-2.adoc[]
