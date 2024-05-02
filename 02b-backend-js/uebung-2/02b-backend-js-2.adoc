@@ -1,4 +1,4 @@
-== Übungsaufgabe 2 zu Modul 2d (Javascript im Backend)
+== Übungsaufgabe 2 zu Modul 2b (Javascript im Backend)
 
 In dieser Übungsaufgabe wird ein Teil der Backend-API der aus der vorhergehenden Lehrveranstaltung bekannten Web-Anwendung mittels Javascript und den Bordmitteln von Node.js realisiert.
 
