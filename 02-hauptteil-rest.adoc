@@ -1,4 +1,4 @@
-= Übungen zu verteilten Systemen (Grundlagen)
+= Übungen zu verteilten Systemen (Hauptteil: REST-Webservices)
 Andreas Rehmann | DHBW Villingen-Schwenningen
 v2024-1
 :sectnums:
