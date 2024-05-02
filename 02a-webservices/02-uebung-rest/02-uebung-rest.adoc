@@ -1,0 +1,44 @@
+== Übungsaufgabe zu Modul 2a (REST-Webservices)
+
+Diese Aufgabe dient der Übung zur Arbeit mit Spezifikationen im OpenAPI-Format.
+
+=== Platzhalter
+
+Nachfolgend sind die spezifischen Parameter, die in der grundlegenden Einführung zu den Übungen erwähnt sind.
+
+|===
+|Platzhalter |Wert
+
+|`<initial-github>`
+|https://github.com/baitando/dhbw-distributed/tree/main/02a-webservices/02-uebung-rest/initial
+
+|`<initial-download>`
+|https://baitando.github.io/down-git/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/02a-webservices/02-uebung-rest/initial
+
+|`<initial-ide>`
+|https://github.com/baitando/dhbw-distributed/blob/main/02a-webservices/02-uebung-rest/initial/todo.yaml
+|===
+
+=== Aufgabenbeschreibung
+
+Nutzen Sie die offizielle Dokumentation des OpenAPI-Formats unter https://spec.openapis.org/oas/v3.1.0 als Quelle, um die Aufgabenstellung zu bearbeiten.
+
+Sie können diese Spezifikation mittels des online verfügbaren Werkzeugs https://editor.swagger.io/[Swagger Editor] bearbeiten und visuell darstellen.
+Kopieren Sie dazu den Inhalt der Datei `todo.yaml` in den Editor.
+Alternativ können Sie den Swagger Editor auch vorbefüllt mit der initialen Spezifikation über die URL https://github.com/baitando/dhbw-distributed/blob/main/02a-webservices/02-uebung-rest/initial/todo.yaml öffnen.
+
+* **Prüfung und Korrektur**: Finden und korrigieren Sie den offensichtlich falsch gewählten HTTP-Statuscode in der bereitgestellten Spezifikation. Es handelt sich um exakt einen zu korrigierenden HTTP-Statuscode.
+* **Erweiterung**: Erweitern Sie die Spezifikation um die Möglichkeit, alle Aufgaben in einem Aufruf zu löschen (Pfad `/tasks`). Das Backend am Server stellt diese Funktionalität bereits zur Verfügung, d.h. Sie können den Aufruf direkt testen. Berücksichtigen Sie bei den HTTP-Statuscodes der Rückgabe die zwei Fälle,
+1. dass die Verarbeitung erfolgreich war und keine Rückgabe erfolgt und
+2. dass ein interner Server-Fehler aufgetreten ist.
+* **Erweiterung**: Erweitern Sie die Spezifikation um die Möglichkeit, eine einzelne Aufgabe zu löschen (Pfad `/tasks/{task_id}`. Das Backend am Server stellt diese Funktionalität bereits zur Verfügung, d.h. Sie können den Aufruf direkt testen. Berücksichtigen Sie bei den HTTP-Statuscodes der Rückgabe die drei Fälle,
+1. dass die Verarbeitung erfolgreich war und keine Rückgabe erfolgt,
+2. dass ein interner Server-Fehler aufgetreten ist und
+3. dass der zu löschende Eintrag mit der übergebenen ID nicht existiert.
+
+=== Lösungsbeispiel
+
+Eine beispielhafte Lösung finden Sie auf GitHub unter https://github.com/baitando/dhbw-distributed/tree/main/02a-webservices/02-uebung-rest/result.
+
+Sie können dieses Lösungsbeispiel durch Öffnen der URL https://github.com/baitando/dhbw-distributed/blob/main/02a-webservices/02-uebung-rest/result/todo.yaml im Browser direkt in der Online-Entwicklungsumgebung betrachten.
+

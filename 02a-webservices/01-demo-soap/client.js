@@ -1,12 +1,12 @@
-var soap = require('soap');
-var url = 'http://localhost:8000/soap?wsdl';
+const soap = require('soap');
+const url = 'http://localhost:8000/soap?wsdl';
 
 // Create client
 soap.createClient(url, function (err, client) {
     if (err){
         throw err;
     }
-    var args = {
+    const args = {
         owner: "id1:12:34:56:out42"
     };
     // call the service

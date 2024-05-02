@@ -19,6 +19,9 @@ mkdir -p $OUT_DIR_PDF
 $HTML_CMD -D "$OUT_DIR_HTML" 01-grundlagen.adoc
 $PDF_CMD -a pdf-theme=theme.yml -D "$OUT_DIR_PDF" 01-grundlagen.adoc
 
+$HTML_CMD -D "$OUT_DIR_HTML" 02-hauptteil-rest.adoc
+$PDF_CMD -a pdf-theme=theme.yml -D "$OUT_DIR_PDF" 02-hauptteil-rest.adoc
+
 
 function copy() {
   mkdir -p $OUT_DIR_HTML/"$1"

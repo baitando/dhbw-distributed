@@ -1,0 +1,133 @@
+openapi: 3.0.1
+info:
+  title: DHBW TODO
+  description: This is the API provided by the TODO app developed at DHBW.
+  version: 1.0.0
+
+servers:
+  - url: 'https://dhbw-web-todo.azurewebsites.net/api'
+
+paths:
+  /apps:
+    post:
+      summary: Create a new app.
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/App'
+
+  /tasks:
+    get:
+      summary: Returns a list of all tasks.
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskList'
+      parameters:
+        - in: header
+          name: x-api-key
+          required: true
+          schema:
+            type: string
+    post:
+      summary: Create a new task.
+      parameters:
+        - in: header
+          name: x-api-key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        201:
+          description: Created
+          headers:
+            Location:
+              schema:
+                type: string
+  /tasks/{task_id}:
+    get:
+      summary: Get an existing task.
+      parameters:
+        - in: header
+          name: x-api-key
+          required: true
+          schema:
+            type: string
+        - in: path
+          required: true
+          name: task_id
+          description: ID of the task to update
+          schema:
+            type: string
+      responses:
+        500:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+
+    put:
+      summary: Update an existing task.
+      parameters:
+        - in: header
+          name: x-api-key
+          required: true
+          schema:
+            type: string
+        - in: path
+          required: true
+          name: task_id
+          description: ID of the task to update
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        204:
+          description: No Content
+
+components:
+  schemas:
+    App:
+      properties:
+        apiKey:
+          type: string
+    TaskList:
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Task'
+    Task:
+      properties:
+        id:
+          type: string
+          example: 'my-task'
+        title:
+          type: string
+          example: 'My Task Title'
+        notes:
+          type: string
+          example: 'This are the notes of my task'
+        due:
+          type: string
+          format: date
+          example: '2021-11-26'
+        responsible:
+          type: string
+          example: 'Max Mustermann'
