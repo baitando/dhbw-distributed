@@ -1,15 +1,15 @@
-openapi: 3.0.3
+openapi: 3.1.0
 info:
-  title: DHBW Powertrack
-  description: This is the API provided by the Powertrack app developed at DHBW.
+  title: DHBW DriveLOG
+  description: This is the API provided by the DriveLOG app developed at DHBW.
   version: 1.0.0
 paths:
   /records:
     get:
-      summary: Returns a list of all power records.
+      summary: Returns a list of all records.
       responses:
         200:
-          description: List of power records retrieved successfully.
+          description: List of records retrieved successfully.
           content:
             application/json:
               schema:
@@ -43,18 +43,18 @@ paths:
         - in: path
           required: true
           name: record-id
-          description: ID of the power record to retrieve.
+          description: ID of the record to retrieve.
           schema:
             type: string
       responses:
         400:
-          description: Power record retrieved successfully.
+          description: Record retrieved successfully.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExistingRecord'
         404:
-          description: Power record with given ID does not exist. The response payload is empty.
+          description: Record with given ID does not exist. The response payload is empty.
         500:
           description: Internal server error. The response payload is empty.
 
@@ -72,18 +72,22 @@ components:
     NewRecord:
       required:
         - date
-        - reading
+        - totalDistance
+        - purpose
       properties:
         date:
-          description: Date when the value was read from the counter.
+          description: Date when the value was read.
           type: string
           format: date
-          example: '2023-01-28'
-        reading:
-          description: Value of the counter given in unit kWh.
-          type: number
-          format: float
-          example: 234.13
+          example: '2023-11-01'
+        totalDistance:
+          description: Total distance in km.
+          type: integer
+          example: 205
+        purpose:
+          description: Purpose of the drive
+          type: string
+          example: "Zum Geburtstag Miriam"
     ExistingRecord:
       allOf:
         - $ref: '#/components/schemas/NewRecord'
