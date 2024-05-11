@@ -9,7 +9,6 @@
   },
   "main": "./src/sandbox.js",
   "scripts": {
-    "dev": "node ./src/sandbox.js"
   },
   "license": "ISC"
 }
