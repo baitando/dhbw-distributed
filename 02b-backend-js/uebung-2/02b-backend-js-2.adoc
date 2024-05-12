@@ -21,26 +21,8 @@ Nachfolgend sind die spezifischen Parameter, die in der grundlegenden Einführun
 
 === Aufgabenbeschreibung
 
-1. Bearbeiten Sie die Aufgaben bis einschließlich TODO #8, die im Quellcode als Kommentare hinterlegt sind.
-Folgen Sie bei der Abarbeitung der Nummerierung der Aufgaben.
-2. Versuchen Sie nun eine erste Integration mit dem Frontend der vorhergehenden Lehrveranstaltung.
-a. Öffnen Sie https://dhbwweb.z6.web.core.windows.net/konfiguration.html.
-b.	Ändern Sie die URL im Eingabefeld auf die URL Ihres Servers und speichern Sie.
-+
-image::step-2b.png[pdfwidth=90%,width=700px,align="center"]
-+
-c.	Öffnen Sie die Entwicklerkonsole und wechseln Sie in den Bereich, der Ihnen die Netzwerkaktivität zeigt.
-d.	Öffnen Sie nun https://dhbwweb.z6.web.core.windows.net/liste.html.
-e.	Die Liste sollte leer bleiben.
-In der Entwicklerkonsole sollten Sie nun zwei Fehler erkennen können.
-+
-image::step-2e.png[]
-+
-3. Bearbeiten Sie nun Aufgabe TODO #9.
-4. Testen Sie erneut mit dem Frontend, indem Sie https://dhbwweb.z6.web.core.windows.net/konfiguration.html aufrufen.
-Sie sollten nun Einträge in der Liste sehen.
-+
-image::step-4.png[pdfwidth=90%,width=700px,align="center"]
+1.	Bearbeiten Sie die TODO-Kommentare im Code in der Reihenfolge ihrer Nummerierung.
+2.  Setzen Sie nun die restlichen Bestandteile der bereitgestellten Spezifikation um.
 
 === Lösungsbeispiel
 
