@@ -25,6 +25,12 @@ app.use('/swagger-ui', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
        implementiert ist.
  */
 
+app.get('/health', (req, res) => {
+    const healthStatus = {
+        status: "up"
+    };
+    res.json(healthStatus);
+});
 
 /*
     TODO #3 Alle Tasks aus Datei zurueckgeben, wenn Pfad /tasks entspricht und HTTP-Methode GET ist
