@@ -10,17 +10,18 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('yaml').parse(fs.readFileSync('./spec/todo.yaml', 'utf8'));
 app.use('/swagger-ui', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-/*
-    TODO #1 Server starten und testen
+app.use(express.json());
 
-    1. Starten Sie den Server über den Befehl 'npm run dev'. Im Falle der lokalen Ausführung stellen Sie bitte sicher,
-       dass Port 8080 frei ist.
-    2. Rufen Sie die URL http://localhost:8080/health im Browser auf. Wenn alles funktioniert, sollten Sie den
-       Status des Servers mit 'up' angegeben sehen.
-    3. Ändern Sie nun den Status im Code von 'up' auf 'running' und speichern Sie die Datei. Beobachten Sie, wie der
-       Server automatisch neu startet. Verifizieren Sie die Wirksamkeit der Änderung, indem Sie die Seite im Browser
-       neu laden.
-    4. Machen Sie sich nun vertraut mit den Dateien 'package.json' und 'src/server.js'. Sehen Sie sich insbesondere an,
+/*
+    TODO #1 Automatischen Neustart des Server bei Aenderungen testen
+
+    1. Nutzen Sie die Swagger UI mit der geladenen Spezifikation. In Stackblitz ist Sie nach dem Start direkt im
+       Vorschaufenster geoffnet. In der lokalen Umgebung oeffnen Sie die URL http://localhost:8080/swagger-ui. Testen
+       Sie den Pfad /health durch Oeffnen des Eintrags, Klick auf "Try it out" und anschließend auf "Execute".
+    2. Ändern Sie nun den Status im Code von 'up' auf 'running' und speichern Sie die Datei. Beobachten Sie, wie der
+       Server automatisch neu startet. Verifizieren Sie die Wirksamkeit der Änderung, indem Sie die einen erneuten Test
+       durchfuehren.
+    3. Machen Sie sich nun vertraut mit den Dateien 'package.json' und 'src/server.js'. Sehen Sie sich insbesondere an,
        wie das Grundgeruest der Anwendung aufgebaut ist, wie der Server gestartet wird und wie der Endpunkt
        implementiert ist.
  */
@@ -40,10 +41,7 @@ app.get('/health', (req, res) => {
        liefert ein Javascript-Objekt, konkret ein Array.
     3. Geben Sie die geladenen Daten als JSON-String im Response-Body des Aufrufs zurueck. Achten Sie darauf, dass der
        HTTP-Status mit '200' gesetzt wird und der 'Content-Type' als 'application/json' angegeben ist.
-    4. Rufen Sie im Browser nun 'http://localhost:8080/tasks' auf. Sie sollten nun die Daten im JSON-Format sehen.
-    5. Das Grundgeruest der Anwendung liefert bereits eine konfigurierte Swagger UI. Oeffnen Sie diese im Browser ueber
-       die Adresse 'http://localhost:8080/swagger-ui'. Sie koennen nun die Swagger UI nutzen, um einen weiteren Test zur
-       Abfrage aller Tasks durchzufuehren.
+    4. Nutzen Sie die Swagger UI und testen Sie den Pfad /tasks.
  */
 
 
@@ -69,15 +67,14 @@ app.get('/health', (req, res) => {
     1. Registrieren Sie einen neuen Handler für die HTTP-Methode POST und binden Sie diesen an den Pfad '/tasks'.
     2. Im Handler fragen Sie den Inhalt des Request Body ab. Valdieren Sie die uebergebenen Daten nun mit Hilfe der
        bereitgestellten Funktion 'validateTask'.
-    3. Sofern die Validierung aus Punkt 2. erfolgreich ist, erhalten Sie den Wert 'true' als Ergebnis. In diesem Fall erzeugen Sie
-       mit Hilfe der bereitgestellten Funktion 'generateId' eine neue ID und weisen diese dem uebergebenen Task zu.
-       Speichern Sie den neuen Eintrag nun ueber die vorher implementierte Funktion 'addTask', an die Sie den
+    3. Sofern die Validierung aus Punkt 2. erfolgreich ist, erhalten Sie den Wert 'true' als Ergebnis. In diesem Fall
+       erzeugen Sie mit Hilfe der bereitgestellten Funktion 'generateId' eine neue ID und weisen diese dem uebergebenen
+       Task zu. Speichern Sie den neuen Eintrag nun ueber die vorher implementierte Funktion 'addTask', an die Sie den
        anzulegenden Task als Parameter uebergeben.
     4. Setzen Sie den HTTP-Statuscode auf '201' und setzen Sie den Header 'Location' auf die URL des neuen Eintrags. Die
-       URL beginnt mit 'http://localhost:8080/tasks/' und wird um die ID des neuen Eintrags ergaenzt. Schliessen Sie
-       die Anfrage ab.
-    4. Falls die Validierung aus Punkt 2. fehlschlaegt, erhalten Sie den Wert 'false' als Ergebnis. In diesem Fall setzen Sie den
-       HTTP-Status auf 400 und schliessen die Anfrage ab.
+       URL koennen Sie mit der Funktion 'getRecordUrl' ermitteln. Schliessen Sie die Anfrage ab.
+    5. Falls die Validierung aus Punkt 2. fehlschlaegt, erhalten Sie den Wert 'false' als Ergebnis. In diesem Fall
+       setzen Sie den HTTP-Status auf 400 und schliessen die Anfrage ab.
  */
 
 
@@ -91,11 +88,14 @@ function generateId() {
 
 function validateTask(task) {
     return task &&
-        !task.id &&
         task.title &&
         task.notes &&
         task.due &&
         task.responsible;
+}
+
+function getRecordUrl(req, recordId) {
+    return `${req.protocol}://${req.header('host')}/records/${recordId}`;
 }
 
 /*

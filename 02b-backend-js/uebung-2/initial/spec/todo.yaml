@@ -4,10 +4,17 @@ info:
   description: This is the API provided by the TODO app developed at DHBW.
   version: 1.0.0
 
-servers:
-  - url: 'http://localhost:8080'
-
 paths:
+  /health:
+    get:
+      summary: Returns the health status of the application.
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Health'
   /tasks:
     get:
       summary: Returns a list of all tasks.
@@ -98,6 +105,11 @@ paths:
 
 components:
   schemas:
+    Health:
+      properties:
+        status:
+          type: string
+          example: up
     TaskList:
       properties:
         items:
