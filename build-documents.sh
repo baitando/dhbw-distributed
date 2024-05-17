@@ -1,11 +1,11 @@
 PDF_CMD=$1
 HTML_CMD=$2
 if [ -z "$PDF_CMD" ]; then
-  PDF_CMD="docker run -it -v $PWD:/documents/ asciidoctor/docker-asciidoctor:1.38 asciidoctor-pdf"
+  PDF_CMD="docker run --rm -it -v $PWD:/documents/ asciidoctor/docker-asciidoctor:1.38 asciidoctor-pdf"
 fi
 
 if [ -z "$HTML_CMD" ]; then
-  HTML_CMD="docker run -it -v $PWD:/documents/ asciidoctor/docker-asciidoctor:1.38 asciidoctor"
+  HTML_CMD="docker run --rm -it -v $PWD:/documents/ asciidoctor/docker-asciidoctor:1.38 asciidoctor"
 fi
 
 OUT_DIR="out"
