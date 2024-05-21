@@ -1,0 +1,136 @@
+openapi: 3.0.1
+info:
+  title: DHBW TODO
+  description: This is the API provided by the TODO app developed at DHBW.
+  version: 1.0.0
+
+paths:
+  /health:
+    get:
+      summary: Returns the health status of the application.
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Health'
+  /tasks:
+    get:
+      summary: Returns a list of all tasks.
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskList'
+
+    delete:
+      summary: Deletes all tasks
+      responses:
+        204:
+          description: No Content
+        500:
+          description: Internal Server Error
+
+    post:
+      summary: Create a new task.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        201:
+          description: Created
+          headers:
+            Location:
+              schema:
+                type: string
+  /tasks/{task_id}:
+    get:
+      summary: Get an existing task.
+      parameters:
+        - in: path
+          required: true
+          name: task_id
+          description: ID of the task to update
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        404:
+          description: Not Found
+
+    put:
+      summary: Update an existing task.
+      parameters:
+        - in: path
+          required: true
+          name: task_id
+          description: ID of the task to update
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        204:
+          description: No Content
+
+    delete:
+      summary: Delete an existing task.
+      parameters:
+        - in: path
+          required: true
+          name: task_id
+          description: ID of the task to update
+          schema:
+            type: string
+      responses:
+        204:
+          description: No Content
+        404:
+          description: Not Found
+        500:
+          description: Internal Server Error
+
+components:
+  schemas:
+    Health:
+      properties:
+        status:
+          type: string
+          example: up
+    TaskList:
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Task'
+    Task:
+      properties:
+        id:
+          type: string
+          example: 'my-task'
+        title:
+          type: string
+          example: 'My Task Title'
+        notes:
+          type: string
+          example: 'This are the notes of my task'
+        due:
+          type: string
+          format: date
+          example: '2021-11-26'
+        responsible:
+          type: string
+          example: 'Max Mustermann'

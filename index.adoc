@@ -21,8 +21,5 @@ include::01b-auffrischung-js/uebung-2/01b-auffrischung-js-2.adoc[]
 :imagesdir: 01-jsonrpc
 include::01-jsonrpc/01-jsonrpc.adoc[]
 
-:imagesdir: 02d-backend-js/uebung-1
-include::02b-backend-js/uebung-1-alt/02b-backend-js-1.adoc[]
-
 :imagesdir: 02d-backend-js/uebung-2
 include::02b-backend-js/uebung-2/02b-backend-js-2.adoc[]

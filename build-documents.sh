@@ -25,6 +25,9 @@ $PDF_CMD -a pdf-theme=theme.yml -D "$OUT_DIR_PDF" 02-hauptteil-rest.adoc
 $HTML_CMD -D "$OUT_DIR_HTML" 02-hauptteil-backend.adoc
 $PDF_CMD -a pdf-theme=theme.yml -D "$OUT_DIR_PDF" 02-hauptteil-backend.adoc
 
+$HTML_CMD -D "$OUT_DIR_HTML" 02-hauptteil-cors.adoc
+$PDF_CMD -a pdf-theme=theme.yml -D "$OUT_DIR_PDF" 02-hauptteil-cors.adoc
+
 function copy() {
   mkdir -p $OUT_DIR_HTML/"$1"
   cp ./"$1"/*.png $OUT_DIR_HTML/"$1"/
@@ -32,4 +35,4 @@ function copy() {
 
 
 copy 01-jsonrpc
-copy 02b-backend-js/uebung-2
+copy 02c-cors

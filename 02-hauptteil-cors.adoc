@@ -1,0 +1,16 @@
+= Übungen zu verteilten Systemen (Hauptteil: CORS)
+Andreas Rehmann | DHBW Villingen-Schwenningen
+v2024-1
+:sectnums:
+:!chapter-signifier:
+:doctype: book
+:toc: left
+:toc-title: Inhaltsverzeichnis
+
+:!sectnums:
+:imagesdir: 00-intro
+include::00-intro/00-intro.adoc[]
+
+:sectnums:
+:imagesdir: 02c-cors
+include::02c-cors/02c-cors.adoc[]
