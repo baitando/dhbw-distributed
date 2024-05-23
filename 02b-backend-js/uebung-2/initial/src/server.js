@@ -27,7 +27,6 @@ app.use(express.json());
  */
 
 app.get('/health', (req, res) => {
-    throw new Error("Fehler");
     const healthStatus = {
         status: "up"
     };
