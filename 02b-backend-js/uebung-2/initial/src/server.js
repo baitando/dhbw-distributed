@@ -27,6 +27,7 @@ app.use(express.json());
  */
 
 app.get('/health', (req, res) => {
+    throw new Error("Fehler");
     const healthStatus = {
         status: "up"
     };
@@ -77,6 +78,11 @@ app.get('/health', (req, res) => {
        setzen Sie den HTTP-Status auf 400 und schliessen die Anfrage ab.
  */
 
+app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500);
+    res.send();
+});
 
 app.listen(8080, () => {
     console.log("Serving request");

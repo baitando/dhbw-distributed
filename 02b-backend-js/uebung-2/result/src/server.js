@@ -106,6 +106,12 @@ app.post('/tasks', (req, res) => {
     }
 });
 
+app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500);
+    res.send();
+});
+
 app.listen(8080, () => {
     console.log("Serving request");
 });
