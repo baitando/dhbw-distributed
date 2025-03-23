@@ -1,0 +1,40 @@
+POST https://dhbw-web-simpletodo.azurewebsites.net/api/todos
+x-api-key: rehmanna
+Content-Type: application/json
+
+{
+  "text": "Milch kaufen"
+}
+
+###
+
+GET https://dhbw-web-simpletodo.azurewebsites.net/api/todos
+x-api-key: rehmanna
+Accept: application/json
+
+###
+
+DELETE https://dhbw-web-simpletodo.azurewebsites.net/api/todos/ebcd5ab6-c0a8-4c3c-ae07-221a6f172bd1
+x-api-key: rehmanna
+
+###
+
+# Local
+POST http://localhost:7071/api/todos
+Content-Type: application/json
+x-api-key: rehmanna
+
+{
+  "text": "Einkaufen gehen"
+}
+
+###
+
+GET http://localhost:7071/api/todos
+Accept: application/json
+x-api-key: rehmanna
+
+###
+
+DELETE http://localhost:7071/api/todos/62c67ecc-8f3f-4e7b-9936-e361a79ce08b
+x-api-key: rehmanna
