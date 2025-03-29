@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.18">
 <meta name="author" content="Andreas Rehmann | DHBW Villingen-Schwenningen">
-<title>Übungen zu verteilten Systemen (Hauptteil: REST-Webservices)</title>
+<title>Übungen zu verteilten Systemen (Wiederholung)</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,10 +439,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
-<h1>Übungen zu verteilten Systemen (Hauptteil: REST-Webservices)</h1>
+<h1>Übungen zu verteilten Systemen (Wiederholung)</h1>
 <div class="details">
 <span id="author" class="author">Andreas Rehmann | DHBW Villingen-Schwenningen</span><br>
-<span id="revnumber">version 2024-1</span>
+<span id="revnumber">version 2025-1</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhaltsverzeichnis</div>
@@ -453,11 +453,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_werkzeuge">Werkzeuge</a></li>
 </ul>
 </li>
-<li><a href="#_übungsaufgabe_zu_modul_2a_rest_webservices">1. Übungsaufgabe zu Modul 2a (REST-Webservices)</a>
+<li><a href="#_übungsaufgabe_zu_modul_00_wiederholung">1. Übungsaufgabe zu Modul 00 (Wiederholung)</a>
 <ul class="sectlevel2">
 <li><a href="#_platzhalter">1.1. Platzhalter</a></li>
 <li><a href="#_aufgabenbeschreibung">1.2. Aufgabenbeschreibung</a></li>
-<li><a href="#_lösungsbeispiel">1.3. Lösungsbeispiel</a></li>
+<li><a href="#_anleitung">1.3. Anleitung</a></li>
 </ul>
 </li>
 </ul>
@@ -567,10 +567,11 @@ In diesem Fall reicht ein Web-Browser auf Ihrem Rechner aus.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_übungsaufgabe_zu_modul_2a_rest_webservices">1. Übungsaufgabe zu Modul 2a (REST-Webservices)</h2>
+<h2 id="_übungsaufgabe_zu_modul_00_wiederholung">1. Übungsaufgabe zu Modul 00 (Wiederholung)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Diese Aufgabe dient der Übung zur Arbeit mit Spezifikationen im OpenAPI-Format.</p>
+<p>In dieser Übung erweitern Sie das Grundgerüst einer vereinfachten Todo-Anwendung.
+Die Übung dient der Wiederholung der Inhalte aus der ersten Lehrveranstaltung.</p>
 </div>
 <div class="sect2">
 <h3 id="_platzhalter">1.1. Platzhalter</h3>
@@ -591,73 +592,354 @@ In diesem Fall reicht ein Web-Browser auf Ihrem Rechner aus.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;initial-github&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/baitando/dhbw-distributed/tree/main/02a-webservices/02-uebung-rest/initial" class="bare">https://github.com/baitando/dhbw-distributed/tree/main/02a-webservices/02-uebung-rest/initial</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/baitando/dhbw-distributed/tree/main/00-recap/initial" class="bare">https://github.com/baitando/dhbw-distributed/tree/main/00-recap/initial</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;initial-download&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://baitando.github.io/down-git/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/02a-webservices/02-uebung-rest/initial" class="bare">https://baitando.github.io/down-git/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/02a-webservices/02-uebung-rest/initial</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://baitando.github.io/down-git/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/00-recap/initial" class="bare">https://baitando.github.io/down-git/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/00-recap/initial</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;initial-ide&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-distributed/main/02a-webservices/02-uebung-rest/initial/todo.yaml" class="bare">https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-distributed/main/02a-webservices/02-uebung-rest/initial/todo.yaml</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;initial-ide</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://stackblitz.com/fork/github/baitando/dhbw-distributed/tree/main/00-recap/initial?file=index.html&amp;terminal=stackblitz&amp;title=%C3%9Cbungsaufgabe%20zu%20Modul%200%20%28Wiederholung%29&amp;initialpath=index.html" class="bare">https://stackblitz.com/fork/github/baitando/dhbw-distributed/tree/main/00-recap/initial?file=index.html&amp;terminal=stackblitz&amp;title=%C3%9Cbungsaufgabe%20zu%20Modul%200%20%28Wiederholung%29&amp;initialpath=index.html</a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
 <h3 id="_aufgabenbeschreibung">1.2. Aufgabenbeschreibung</h3>
-<div class="paragraph">
-<p>Nutzen Sie die offizielle Dokumentation des OpenAPI-Formats unter <a href="https://spec.openapis.org/oas/v3.1.0" class="bare">https://spec.openapis.org/oas/v3.1.0</a> als Quelle, um die Aufgabenstellung zu bearbeiten.</p>
-</div>
-<div class="paragraph">
-<p>Sie können diese Spezifikation mittels des online verfügbaren Werkzeugs <a href="https://editor.swagger.io/">Swagger Editor</a> bearbeiten und visuell darstellen.
-Kopieren Sie dazu den Inhalt der Datei <code>todo.yaml</code> in den Editor.
-Alternativ können Sie den Swagger Editor auch vorbefüllt mit der initialen Spezifikation über die URL <a href="https://github.com/baitando/dhbw-distributed/blob/main/02a-webservices/02-uebung-rest/initial/todo.yaml" class="bare">https://github.com/baitando/dhbw-distributed/blob/main/02a-webservices/02-uebung-rest/initial/todo.yaml</a> öffnen.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Prüfung und Korrektur</strong>: Finden und korrigieren Sie den offensichtlich falsch gewählten HTTP-Statuscode in der bereitgestellten Spezifikation. Es handelt sich um exakt einen zu korrigierenden HTTP-Statuscode.</p>
-</li>
-<li>
-<p><strong>Erweiterung</strong>: Erweitern Sie die Spezifikation um die Möglichkeit, alle Aufgaben in einem Aufruf zu löschen (Pfad <code>/tasks</code>). Das Backend am Server stellt diese Funktionalität bereits zur Verfügung, d.h. Sie können den Aufruf direkt testen. Berücksichtigen Sie bei den HTTP-Statuscodes der Rückgabe die zwei Fälle,</p>
+<div class="sect3">
+<h4 id="_html">1.2.1. HTML</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>dass die Verarbeitung erfolgreich war und keine Rückgabe erfolgt und</p>
+<p>Fügen Sie an der Markierung <strong>TODO #1</strong> einen Button ein.
+Nutzen Sie dafür den Tag <code>button</code> mit Typ <code>submit</code> und wählen Sie als Beschriftung <code>Hinzufügen</code>.
+Weisen Sie dem Button die Klassen <code>btn</code>, <code>btn-danger</code> und <code>w-100</code> zu.</p>
 </li>
 <li>
-<p>dass ein interner Server-Fehler aufgetreten ist.</p>
+<p>Fügen Sie an der Markierung <strong>TODO #2</strong> einen statischen Eintrag in die Liste ein.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Erzeugen Sie das Listenelement und weisen Sie die Klassen <code>list-group-item</code>, <code>d-flex</code> und <code>align-items-center</code> zu.</p>
+</li>
+<li>
+<p>Fügen Sie dem Listenelement eine Checkbox hinzu. Wählen Sie als Tag <code>input</code> und als Typ <code>checkbox</code>.
+Weisen Sie die Klassen <code>form-check-input</code> und <code>me-2</code> hinzu.</p>
+</li>
+<li>
+<p>Fügen Sie dem Listenelement nach der Checkbox noch den Text <code>Beispielaufgabe</code> als Element mit Tag <code>span</code> ein.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p><strong>Erweiterung</strong>: Erweitern Sie die Spezifikation um die Möglichkeit, eine einzelne Aufgabe zu löschen (Pfad <code>/tasks/{task_id}</code>. Das Backend am Server stellt diese Funktionalität bereits zur Verfügung, d.h. Sie können den Aufruf direkt testen. Berücksichtigen Sie bei den HTTP-Statuscodes der Rückgabe die drei Fälle,</p>
+<p>Binden Sie an der Markierung <strong>TODO #3</strong> einen Verweis auf die Javascript-Datei <code>./script.js</code> hinzu.
+Sie benötigen dafür den Tag <code>script</code>.
+Den Pfad zur Datei setzen Sie als Attribut <code>src</code>.</p>
+</li>
+<li>
+<p>Passen Sie das Element <code>body</code> bei Markierung <strong>TODO HTML #4</strong> so an, dass nach dem Laden die Funktion <code>init</code> aufgerufen wird.
+Sie müssen dazu das Attribut <code>onLoad</code> entsprechend setzen.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_javascript">1.2.2. Javascript</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>dass die Verarbeitung erfolgreich war und keine Rückgabe erfolgt,</p>
+<p>Implementieren Sie in <code>script.js</code> zunächst das nachfolgend beschriebene Verhalten in als Funktion <code>handleSubmit</code>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Lesen Sie den Inhalt des Eingabefeldes aus.</p>
 </li>
 <li>
-<p>dass ein interner Server-Fehler aufgetreten ist und</p>
+<p>Sofern das Feld nicht leer ist, wird der ausgelesene Inhalt auf der Konsole ausgegeben.</p>
 </li>
 <li>
-<p>dass der zu löschende Eintrag mit der übergebenen ID nicht existiert.</p>
+<p>Abschließend wird das Eingabefeld geleert und fokussiert.</p>
 </li>
 </ol>
 </div>
 </li>
-</ul>
+<li>
+<p>Fügen Sie nun die Funktion <code>addTodo</code> hinzu.
+Sie soll den Inhalt des Eingabefeldes als Element der Liste hinzufügen.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Implementieren Sie die Funktion <code>addTodo</code>.
+Als Parameter erwartet die Funktion den Text der Aufgabe.</p>
+</li>
+<li>
+<p>Modifizieren Sie nun die Funktion <code>handleSubmit</code> so, dass nach der Ausgabe des Textes auf der Konsole die Funktion <code>addTodo</code> aufgerufen wird.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Binden Sie nun zur Datenspeicherung den Local Storage an.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Speichern Sie die Aufgaben nach jeder Änderung im Local Storage.
+Implementieren Sie dieses Verhalten in der Funktion <code>saveTodos</code>.
+Die Funktion soll alle Elemente der angezeigten Liste ermitteln und diese im Local Storage abspeichern.</p>
+</li>
+<li>
+<p>Passen Sie die Funktion <code>addTodo</code> so an, dass nach dem Einfügen in der angezeigten Liste die Funktion <code>saveTodos</code> aufgerufen wird.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Laden Sie die Daten aus dem Local Storage, wenn das Dokument geladen ist.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Implementieren Sie die Funktion <code>loadTodos</code>.
+Laden Sie die Daten aus dem Local Storage und zeigen Sie diese in der Liste an.</p>
+</li>
+<li>
+<p>Passen Sie die Funktion <code>init</code> so an, dass die Funktion <code>loadTodos</code> aufgerufen wird.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Ein Klick auf die Checkbox soll den jeweiligen Eintrag sofort löschen.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Implementieren Sie die Funktion <code>deleteTodo</code>.
+Als Parameter wird die ID erwartet.
+Der Eintrag mit der ID soll gelöscht werden.
+Im Anschluss soll die angepasste Liste über <code>saveTodos</code> im Local Storage gespeichert werden.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_lösungsbeispiel">1.3. Lösungsbeispiel</h3>
+<h3 id="_anleitung">1.3. Anleitung</h3>
 <div class="paragraph">
-<p>Eine beispielhafte Lösung finden Sie auf GitHub unter <a href="https://github.com/baitando/dhbw-distributed/tree/main/02a-webservices/02-uebung-rest/result" class="bare">https://github.com/baitando/dhbw-distributed/tree/main/02a-webservices/02-uebung-rest/result</a>.</p>
+<p>Die nachfolgende Anleitung führt Sie Schritt für Schritt durch die Umsetzung der Aufgaben aus dem vorhergehenden Kapitel.</p>
 </div>
+<div class="sect3">
+<h4 id="_html_2">1.3.1. HTML</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An der Markierung <strong>TODO HTML #1</strong> den folgenden Inhalt einfügen.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;button type="submit" class="btn btn-danger w-100"&gt;Hinzuf&amp;uuml;gen&lt;/button&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>An der Markierung <strong>TODO HTML #2</strong> den folgenden Inhalt einfügen.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;li class="list-group-item d-flex align-items-center"&gt;
+  &lt;input type="checkbox" class="form-check-input me-2"&gt;
+  &lt;span&gt;Beispielaufgabe&lt;/span&gt;
+&lt;/li&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>An der Markierung <strong>TODO HTML #3</strong> den folgenden Inhalt einfügen.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;script src="./script.js"&gt;&lt;/script&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>An der Markierung <strong>TODO HTML #4</strong> die Zeile anpassen, wie sie nachfolgend dargestellt ist.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;body onload="init()"&gt;</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_javascript_2">1.3.2. Javascript</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Die Funktion <code>handleSubmit</code> ist folgendermaßen zu implementieren.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">function handleSubmit() {
+  const input = document.getElementById("todoInput");
+  const text = input.value.trim();
+  if (text.length !== 0) {
+      console.log(text);
+      input.value = "";
+      input.focus();
+  }
+  return false;
+}</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Die Funktion <code>addTodo</code> ist folgendermaßen zu implementieren.
+Zusätzlich aufgezeigt ist der aktuelle Zustand der Funktion <code>handleSubmit</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">function handleSubmit() {
+  const input = document.getElementById("todoInput");
+  const text = input.value.trim();
+  if (text.length !== 0) {
+      console.log(text);
+      addTodo(text);
+      input.value = "";
+      input.focus();
+  }
+  return false;
+}
+
+function addTodo(text) {
+  const list = document.getElementById("todoList");
+  const id = Date.now().toString();
+  const li = document.createElement("li");
+  li.className = "list-group-item d-flex align-items-center justify-content-between";
+  li.dataset.id = id;
+
+  const left = document.createElement("div");
+  left.className = "d-flex align-items-center";
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.className = "form-check-input me-2";
+
+  const span = document.createElement("span");
+  span.innerText = text;
+
+  left.appendChild(checkbox);
+  left.appendChild(span);
+  li.appendChild(left);
+  list.appendChild(li);
+}</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Die Funktion <code>saveTodos</code> ist folgendermaßen zu implementieren.
+Die Funktion <code>handleSubmit</code> muss ebenfalls angepasst werden.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">function handleSubmit() {
+  const input = document.getElementById("todoInput");
+  const text = input.value.trim();
+  if (text.length !== 0) {
+    console.log(text);
+    addTodo(text);
+    input.value = "";
+    input.focus();
+  }
+  saveTodos();
+  return false;
+}
+
+function saveTodos() {
+    const todos = [];
+    const items = document.querySelectorAll("#todoList li");
+    for (let i = 0; i &lt; items.length; i++) {
+        const span = items[i].querySelector("span");
+        const id = items[i].dataset.id;
+        todos.push({ id: id, text: span.innerText });
+    }
+    localStorage.setItem("todos", JSON.stringify(todos));
+}</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Die Funktion <code>loadTodos</code> ist folgendermaßen zu implementieren.
+Die Funktion <code>init</code> muss ebenfalls angepasst werden.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">function init() {
+  loadTodos();
+}
+
+function loadTodos() {
+  const json = localStorage.getItem("todos");
+  if (json !== null) {
+    const todos = JSON.parse(json);
+    for (let i = 0; i &lt; todos.length; i++) {
+      addTodo(todos[i].text, todos[i].checked);
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Die Funktion <code>loadTodos</code> ist folgendermaßen zu implementieren.
+Zusätzlich muss die Funktion <code>addTodo</code> angepasst werden.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">function addTodo(text) {
+  const list = document.getElementById("todoList");
+  const id = Date.now().toString();
+  const li = document.createElement("li");
+  li.className = "list-group-item d-flex align-items-center justify-content-between";
+  li.dataset.id = id;
+
+  const left = document.createElement("div");
+  left.className = "d-flex align-items-center";
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.className = "form-check-input me-2";
+
+  const span = document.createElement("span");
+  span.innerText = text;
+
+  checkbox.onchange = function () {
+    deleteTodo(id);
+    li.remove();
+  };
+
+  left.appendChild(checkbox);
+  left.appendChild(span);
+  li.appendChild(left);
+  list.appendChild(li);
+}
+
+function deleteTodo(id) {
+    const json = localStorage.getItem("todos");
+    if (json !== null) {
+        const todos = JSON.parse(json);
+        const updated = todos.filter(t =&gt; t.id !== id);
+        localStorage.setItem("todos", JSON.stringify(updated));
+    }
+}</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optional_anbindung_an_rest_api">1.3.3. Optional: Anbindung an REST API</h4>
 <div class="paragraph">
-<p>Sie können dieses Lösungsbeispiel durch Öffnen der URL <a href="https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-distributed/main/02a-webservices/02-uebung-rest/result/todo.yaml" class="bare">https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-distributed/main/02a-webservices/02-uebung-rest/result/todo.yaml</a> im Browser direkt in der Online-Entwicklungsumgebung betrachten.</p>
+<p>Binden Sie anstatt des Local Storage die REST API an, die in der Spezifikation ersichtlich ist.</p>
+</div>
 </div>
 </div>
 </div>
@@ -665,7 +947,7 @@ Alternativ können Sie den Swagger Editor auch vorbefüllt mit der initialen Spe
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 2024-1<br>
+Version 2025-1<br>
 Last updated 2025-03-29 19:54:52 UTC
 </div>
 </div>
