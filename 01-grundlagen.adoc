@@ -1,6 +1,6 @@
 = Übungen zu verteilten Systemen (Grundlagen)
 Andreas Rehmann | DHBW Villingen-Schwenningen
-v2024-1
+v2025-1
 :sectnums:
 :!chapter-signifier:
 :doctype: book
