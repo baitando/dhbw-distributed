@@ -15,18 +15,27 @@ export async function AddTodo(request: HttpRequest, context: InvocationContext):
     const owner = ownerValidation.owner!;
 
     // Todo validieren
-    const todo = await request.json() as Todo;
-    const todoValidation = validateTodo(todo, context);
+    const todoInput = await request.json() as Todo;
+    const todoValidation = validateTodo(todoInput, context);
     if (!todoValidation.isValid) {
         return todoValidation.response!;
     }
 
     // Todo speichern
-    const id = await service.addTodoForOwner(todo, owner);
+    const id = await service.addTodoForOwner(todoInput, owner);
     context.log(`ID of new todo is "${id}"`);
 
+    const savedTodo: Todo = {
+        id,
+        text: todoInput.text
+    };
+
     return {
-        status: 201
+        status: 200,
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(savedTodo)
     };
 }
 

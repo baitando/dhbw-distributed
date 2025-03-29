@@ -246,3 +246,4 @@ function deleteTodo(id) {
 ==== Optional: Anbindung an REST API
 
 Binden Sie anstatt des Local Storage die REST API an, die in der Spezifikation ersichtlich ist.
+Sie können sich diese direkt unter https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-distributed/refs/heads/main/00-recap/todo-api.yaml ansehen.
