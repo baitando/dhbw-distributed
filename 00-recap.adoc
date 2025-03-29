@@ -1,0 +1,16 @@
+= Übungen zu verteilten Systemen (Wiederholung)
+Andreas Rehmann | DHBW Villingen-Schwenningen
+v2025-1
+:sectnums:
+:!chapter-signifier:
+:doctype: book
+:toc: left
+:toc-title: Inhaltsverzeichnis
+
+:!sectnums:
+:imagesdir: 00-intro
+include::00-intro/00-intro.adoc[]
+
+:sectnums:
+:imagesdir: 00-recap
+include::00-recap/00-recap.adoc[]

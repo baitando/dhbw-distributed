@@ -1,0 +1,248 @@
+== Übungsaufgabe zu Modul 00 (Wiederholung)
+
+In dieser Übung erweitern Sie das Grundgerüst einer vereinfachten Todo-Anwendung.
+Die Übung dient der Wiederholung der Inhalte aus der ersten Lehrveranstaltung.
+
+=== Platzhalter
+
+Nachfolgend sind die spezifischen Parameter, die in der grundlegenden Einführung zu den Übungen erwähnt sind.
+
+|===
+|Platzhalter |Wert
+
+|`<initial-github>`
+|https://github.com/baitando/dhbw-distributed/tree/main/00-recap/initial
+
+|`<initial-download>`
+|https://baitando.github.io/down-git/#/home?url=https://github.com/baitando/dhbw-distributed/tree/main/00-recap/initial
+
+|`<initial-ide`
+|https://stackblitz.com/fork/github/baitando/dhbw-distributed/tree/main/00-recap/initial?file=index.html&terminal=stackblitz&title=%C3%9Cbungsaufgabe%20zu%20Modul%200%20%28Wiederholung%29&initialpath=index.html
+|===
+
+=== Aufgabenbeschreibung
+
+==== HTML
+. Fügen Sie an der Markierung *TODO #1* einen Button ein.
+Nutzen Sie dafür den Tag `button` mit Typ `submit` und wählen Sie als Beschriftung `Hinzufügen`.
+Weisen Sie dem Button die Klassen `btn`, `btn-danger` und `w-100` zu.
+. Fügen Sie an der Markierung *TODO #2* einen statischen Eintrag in die Liste ein.
+.. Erzeugen Sie das Listenelement und weisen Sie die Klassen `list-group-item`, `d-flex` und `align-items-center` zu.
+.. Fügen Sie dem Listenelement eine Checkbox hinzu. Wählen Sie als Tag `input` und als Typ `checkbox`.
+Weisen Sie die Klassen `form-check-input` und `me-2` hinzu.
+.. Fügen Sie dem Listenelement nach der Checkbox noch den Text `Beispielaufgabe` als Element mit Tag `span` ein.
+. Binden Sie an der Markierung *TODO #3* einen Verweis auf die Javascript-Datei `./script.js` hinzu.
+Sie benötigen dafür den Tag `script`.
+Den Pfad zur Datei setzen Sie als Attribut `src`.
+. Passen Sie das Element `body` bei Markierung *TODO HTML #4* so an, dass nach dem Laden die Funktion `init` aufgerufen wird.
+Sie müssen dazu das Attribut `onLoad` entsprechend setzen.
+
+==== Javascript
+. Implementieren Sie in `script.js` zunächst das nachfolgend beschriebene Verhalten in als Funktion `handleSubmit`.
+.. Lesen Sie den Inhalt des Eingabefeldes aus.
+.. Sofern das Feld nicht leer ist, wird der ausgelesene Inhalt auf der Konsole ausgegeben.
+.. Abschließend wird das Eingabefeld geleert und fokussiert.
+. Fügen Sie nun die Funktion `addTodo` hinzu.
+Sie soll den Inhalt des Eingabefeldes als Element der Liste hinzufügen.
+.. Implementieren Sie die Funktion `addTodo`.
+Als Parameter erwartet die Funktion den Text der Aufgabe.
+.. Modifizieren Sie nun die Funktion `handleSubmit` so, dass nach der Ausgabe des Textes auf der Konsole die Funktion `addTodo` aufgerufen wird.
+. Binden Sie nun zur Datenspeicherung den Local Storage an.
+.. Speichern Sie die Aufgaben nach jeder Änderung im Local Storage.
+Implementieren Sie dieses Verhalten in der Funktion `saveTodos`.
+Die Funktion soll alle Elemente der angezeigten Liste ermitteln und diese im Local Storage abspeichern.
+.. Passen Sie die Funktion `addTodo` so an, dass nach dem Einfügen in der angezeigten Liste die Funktion `saveTodos` aufgerufen wird.
+. Laden Sie die Daten aus dem Local Storage, wenn das Dokument geladen ist.
+.. Implementieren Sie die Funktion `loadTodos`.
+Laden Sie die Daten aus dem Local Storage und zeigen Sie diese in der Liste an.
+.. Passen Sie die Funktion `init` so an, dass die Funktion `loadTodos` aufgerufen wird.
+. Ein Klick auf die Checkbox soll den jeweiligen Eintrag sofort löschen.
+.. Implementieren Sie die Funktion `deleteTodo`.
+Als Parameter wird die ID erwartet.
+Der Eintrag mit der ID soll gelöscht werden.
+Im Anschluss soll die angepasste Liste über `saveTodos` im Local Storage gespeichert werden.
+
+=== Anleitung
+
+Die nachfolgende Anleitung führt Sie Schritt für Schritt durch die Umsetzung der Aufgaben aus dem vorhergehenden Kapitel.
+
+==== HTML
+. An der Markierung *TODO HTML #1* den folgenden Inhalt einfügen.
++
+[source,html]
+----
+<button type="submit" class="btn btn-danger w-100">Hinzuf&uuml;gen</button>
+----
+. An der Markierung *TODO HTML #2* den folgenden Inhalt einfügen.
++
+[source,html]
+----
+<li class="list-group-item d-flex align-items-center">
+  <input type="checkbox" class="form-check-input me-2">
+  <span>Beispielaufgabe</span>
+</li>
+----
+. An der Markierung *TODO HTML #3* den folgenden Inhalt einfügen.
++
+[source,html]
+----
+<script src="./script.js"></script>
+----
+
+. An der Markierung *TODO HTML #4* die Zeile anpassen, wie sie nachfolgend dargestellt ist.
++
+[source,html]
+----
+<body onload="init()">
+----
+
+==== Javascript
+. Die Funktion `handleSubmit` ist folgendermaßen zu implementieren.
++
+[source,javascript]
+----
+function handleSubmit() {
+  const input = document.getElementById("todoInput");
+  const text = input.value.trim();
+  if (text.length !== 0) {
+      console.log(text);
+      input.value = "";
+      input.focus();
+  }
+  return false;
+}
+----
+. Die Funktion `addTodo` ist folgendermaßen zu implementieren.
+Zusätzlich aufgezeigt ist der aktuelle Zustand der Funktion `handleSubmit`.
++
+[source,javascript]
+----
+function handleSubmit() {
+  const input = document.getElementById("todoInput");
+  const text = input.value.trim();
+  if (text.length !== 0) {
+      console.log(text);
+      addTodo(text);
+      input.value = "";
+      input.focus();
+  }
+  return false;
+}
+
+function addTodo(text) {
+  const list = document.getElementById("todoList");
+  const id = Date.now().toString();
+  const li = document.createElement("li");
+  li.className = "list-group-item d-flex align-items-center justify-content-between";
+  li.dataset.id = id;
+
+  const left = document.createElement("div");
+  left.className = "d-flex align-items-center";
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.className = "form-check-input me-2";
+
+  const span = document.createElement("span");
+  span.innerText = text;
+
+  left.appendChild(checkbox);
+  left.appendChild(span);
+  li.appendChild(left);
+  list.appendChild(li);
+}
+----
+. Die Funktion `saveTodos` ist folgendermaßen zu implementieren.
+Die Funktion `handleSubmit` muss ebenfalls angepasst werden.
++
+[source,javascript]
+----
+function handleSubmit() {
+  const input = document.getElementById("todoInput");
+  const text = input.value.trim();
+  if (text.length !== 0) {
+    console.log(text);
+    addTodo(text);
+    input.value = "";
+    input.focus();
+  }
+  saveTodos();
+  return false;
+}
+
+function saveTodos() {
+    const todos = [];
+    const items = document.querySelectorAll("#todoList li");
+    for (let i = 0; i < items.length; i++) {
+        const span = items[i].querySelector("span");
+        const id = items[i].dataset.id;
+        todos.push({ id: id, text: span.innerText });
+    }
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
+----
+. Die Funktion `loadTodos` ist folgendermaßen zu implementieren.
+Die Funktion `init` muss ebenfalls angepasst werden.
++
+[source,javascript]
+----
+function init() {
+  loadTodos();
+}
+
+function loadTodos() {
+  const json = localStorage.getItem("todos");
+  if (json !== null) {
+    const todos = JSON.parse(json);
+    for (let i = 0; i < todos.length; i++) {
+      addTodo(todos[i].text, todos[i].checked);
+    }
+  }
+}
+----
+. Die Funktion `loadTodos` ist folgendermaßen zu implementieren.
+Zusätzlich muss die Funktion `addTodo` angepasst werden.
++
+[source,javascript]
+----
+function addTodo(text) {
+  const list = document.getElementById("todoList");
+  const id = Date.now().toString();
+  const li = document.createElement("li");
+  li.className = "list-group-item d-flex align-items-center justify-content-between";
+  li.dataset.id = id;
+
+  const left = document.createElement("div");
+  left.className = "d-flex align-items-center";
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.className = "form-check-input me-2";
+
+  const span = document.createElement("span");
+  span.innerText = text;
+
+  checkbox.onchange = function () {
+    deleteTodo(id);
+    li.remove();
+  };
+
+  left.appendChild(checkbox);
+  left.appendChild(span);
+  li.appendChild(left);
+  list.appendChild(li);
+}
+
+function deleteTodo(id) {
+    const json = localStorage.getItem("todos");
+    if (json !== null) {
+        const todos = JSON.parse(json);
+        const updated = todos.filter(t => t.id !== id);
+        localStorage.setItem("todos", JSON.stringify(updated));
+    }
+}
+----
+
+==== Optional: Anbindung an REST API
+
+Binden Sie anstatt des Local Storage die REST API an, die in der Spezifikation ersichtlich ist.
