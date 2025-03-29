@@ -1,3 +1,103 @@
 openapi: 3.0.0
 info:
   title: Simple Todo API
+  version: 1.0.0
+  description: API zur Verwaltung von Todo-Einträgen über Azure Functions
+
+servers:
+  - url: https://dhbw-web-simpletodo.azurewebsites.net/api
+    description: Produktivumgebung
+
+paths:
+  /todos:
+    get:
+      summary: Alle Todos abrufen
+      operationId: getTodos
+      parameters:
+        - name: x-api-key
+          in: header
+          required: true
+          schema:
+            type: string
+          description: API-Schlüssel zur Authentifizierung
+      responses:
+        '200':
+          description: Liste aller Todos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Todo'
+    post:
+      summary: Neues Todo erstellen
+      operationId: addTodo
+      parameters:
+        - name: x-api-key
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TodoInput'
+      responses:
+        '201':
+          description: Todo erfolgreich erstellt
+          headers:
+            Location:
+              description: URL zum neu erstellten Todo
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Todo'
+
+  /todos/{id}:
+    delete:
+      summary: Todo löschen
+      operationId: deleteTodo
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: x-api-key
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Todo erfolgreich gelöscht
+        '404':
+          description: Todo mit gegebener ID nicht gefunden
+
+components:
+  schemas:
+    Todo:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "ebcd5ab6-c0a8-4c3c-ae07-221a6f172bd1"
+        text:
+          type: string
+          example: "Milch kaufen"
+        checked:
+          type: boolean
+          example: false
+
+    TodoInput:
+      type: object
+      required:
+        - text
+      properties:
+        text:
+          type: string
+          example: "Milch kaufen"
