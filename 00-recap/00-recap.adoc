@@ -247,3 +247,15 @@ function deleteTodo(id) {
 
 Binden Sie anstatt des Local Storage die REST API an, die in der Spezifikation ersichtlich ist.
 Sie können sich diese direkt unter https://editor.swagger.io/?url=https://raw.githubusercontent.com/baitando/dhbw-distributed/refs/heads/main/00-recap/todo-api.yaml ansehen.
+
+=== Lösungsbeispiel
+
+==== Basisvariante
+Eine beispielhafte Lösung finden Sie auf GitHub unter https://github.com/baitando/dhbw-distributed/tree/main/00-recap/result-basic.
+
+Sie können dieses Lösungsbeispiel durch Öffnen der URL https://stackblitz.com/github/baitando/dhbw-distributed/tree/main/00-recap/result-basic?file=index.html&initialpath=index.html&terminal=stackblitz&title=L%C3%B6sungsbeispiel%20zu%20Modul%200%20%28Wiederholung%29 im Browser direkt in der Online-Entwicklungsumgebung betrachten.
+
+==== Erweiterte Variante
+Eine beispielhafte Lösung finden Sie auf GitHub unter https://github.com/baitando/dhbw-distributed/tree/main/00-recap/result-extended.
+
+Sie können dieses Lösungsbeispiel durch Öffnen der URL https://stackblitz.com/github/baitando/dhbw-distributed/tree/main/00-recap/result-extended?file=index.html&initialpath=index.html&terminal=stackblitz&title=L%C3%B6sungsbeispiel%20zu%20Modul%200%20%28Wiederholung%29 im Browser direkt in der Online-Entwicklungsumgebung betrachten.
