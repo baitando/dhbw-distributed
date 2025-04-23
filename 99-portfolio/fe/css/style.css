@@ -1,0 +1,79 @@
+/* General settings */
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 800px;
+}
+
+/* Util classes */
+.image-top-rounded {
+    border-top-left-radius: 0.375rem;
+    border-top-right-radius: 0.375rem;
+}
+
+/* Hotel area*/
+.hotel-area h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+.hotel-area p {
+    font-family: 'Lora', serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Form area */
+input.form-control, button.btn {
+    font-size: 0.85rem;
+}
+
+input.form-control:focus {
+    border-color: #a03e2f;
+    box-shadow: 0 0 0 0.15rem rgba(160, 62, 47, 0.25);
+}
+
+button.btn {
+    background-color: #a03e2f;
+    color: white;
+    border: none;
+}
+
+button.btn:hover {
+    background-color: #842e21;
+    color: white;
+    border: none;
+}
+
+button.btn:focus,
+button.btn:focus-visible {
+    outline: none;
+    border: 1px solid #a03e2f;
+    box-shadow: 0 0 0 0.2rem rgba(160, 62, 47, 0.4);
+}
+
+/* Review area */
+.review {
+    background-color: #f0ece7;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.review-header {
+    font-weight: 600;
+    color: #a03e2f;
+    margin-bottom: 0.25rem;
+}
+
+.review-text {
+    color: #333333;
+}
+
+.text-theme {
+    color: #a03e2f;
+}
+

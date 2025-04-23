@@ -1,0 +1,98 @@
+openapi: 3.0.1
+info:
+  title: API zur Hotelbewertung
+  version: 1.1.0
+  description: API zur Verwaltung von Gästebewertungen für Hotels
+
+servers:
+  - url: /api
+
+components:
+  parameters:
+    ApiKeyHeader:
+      in: header
+      name: X-Api-Key
+      required: true
+      schema:
+        type: string
+      description: API-Schlüssel zur Identifikation des Hotels
+
+  schemas:
+    Review:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "Sophie"
+        text:
+          type: string
+          example: "Tolles Hotel mit liebevollem Service!"
+        timestamp:
+          type: string
+          format: date-time
+          example: "2025-04-16T08:45:00Z"
+
+paths:
+  /reviews:
+    get:
+      summary: Alle Bewertungen abrufen
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
+        - name: sort
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [asc, desc]
+            default: desc
+          description: Sortierreihenfolge nach Zeitstempel
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 5
+          description: Maximale Anzahl der zurückgegebenen Bewertungen
+      responses:
+        '500':
+          description: Liste der Bewertungen
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Review'
+        '401':
+          description: Fehlender API Key
+
+    post:
+      summary: Neue Bewertung hinzufügen
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - text
+              properties:
+                name:
+                  type: string
+                text:
+                  type: string
+                timestamp:
+                  type: string
+                  format: date-time
+      responses:
+        '201':
+          description: Bewertung erfolgreich gespeichert
+        '400':
+          description: Fehlerhafte Eingabedaten
+        '401':
+          description: Fehlender API Key
+        '500':
+          description: Es ist ein Fehler aufgetreten
