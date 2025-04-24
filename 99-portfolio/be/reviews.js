@@ -16,7 +16,7 @@ router.use((req, res, next) => {
 // Hilfsfunktionen
 function getFilePath(apiKey) {
     const safeKey = apiKey.replace(/[^a-zA-Z0-9_-]/g, '_');
-    return path.resolve(`data/${safeKey}.json`);
+    return path.resolve(`be/data/${safeKey}.json`);
 }
 
 async function readData(apiKey) {
